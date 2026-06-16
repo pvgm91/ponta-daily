@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ponta – Confirmação de Tarefas</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark-green: #0F3D3E;
+      --lime: #A6CE39;
+      --lime-dark: #8fb32e;
+      --cream: #f5f3ed;
+      --text: #1a2a2b;
+      --muted: #5a7172;
+      --border: #d6d0c4;
+      --red: #c0392b;
+      --yellow: #e67e22;
+      --green: #27ae60;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0 0 60px;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--dark-green);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--lime);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--dark-green);
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+    header h1 {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    header span {
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 1px;
+      display: block;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* STEP: SELECT PERSON */
+    .step-select {
+      padding-top: 36px;
+    }
+    .step-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .step-select h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--dark-green);
+      margin-bottom: 20px;
+    }
+    .person-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .person-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 10px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark-green);
+      text-align: center;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .person-btn:hover {
+      border-color: var(--lime);
+      background: #f0f7e0;
+      transform: translateY(-1px);
+    }
+    .person-btn.active {
+      border-color: var(--lime);
+      background: var(--lime);
+      color: var(--dark-green);
+    }
+
+    /* FORM */
+    #task-form { display: none; }
+    #task-form.visible { display: block; }
+
+    .form-header {
+      padding: 28px 0 8px;
+      border-bottom: 2px solid var(--lime);
+      margin-bottom: 24px;
+    }
+    .form-header .who {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--lime-dark);
+    }
+    .form-header h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--dark-green);
+      margin-top: 2px;
+    }
+
+    /* SECTION (BU) */
+    .bu-section {
+      margin-bottom: 10px;
+    }
+    .bu-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--cream);
+      padding: 6px 0 4px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 10px;
+    }
+
+    /* TASK CARD */
+    .task-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .task-card .priority {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .task-card .client-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark-green);
+      margin-bottom: 6px;
+    }
+    .task-card .description {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    /* STATUS BUTTONS */
+    .status-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .status-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+    .status-btn {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 8px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--cream);
+      text-align: center;
+      transition: all 0.15s;
+      line-height: 1.3;
+    }
+    .status-btn:hover { border-color: #999; }
+    .status-btn.selected-sim    { background: #e8f8ef; border-color: var(--green);  color: var(--green);  font-weight: 600; }
+    .status-btn.selected-proc   { background: #fff8e8; border-color: var(--yellow); color: var(--yellow); font-weight: 600; }
+    .status-btn.selected-nao    { background: #fdf0ee; border-color: var(--red);    color: var(--red);    font-weight: 600; }
+    .status-btn.selected-semres { background: #f0f0f0; border-color: #888;         color: #555;          font-weight: 600; }
+
+    /* OBS */
+    .obs-field {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--cream);
+      resize: vertical;
+      min-height: 60px;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+    .obs-field:focus { border-color: var(--lime-dark); }
+    .obs-field::placeholder { color: #aaa; }
+
+    /* SUBMIT */
+    .submit-wrap {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .submit-btn {
+      width: 100%;
+      background: var(--dark-green);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+    .submit-btn:hover  { background: #0c3030; transform: translateY(-1px); }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* SUCCESS */
+    #success-msg {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    #success-msg .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    #success-msg h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--dark-green);
+      margin-bottom: 8px;
+    }
+    #success-msg p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">P</div>
+  <div>
+    <h1>Daily – Confirmação de Tarefas</h1>
+    <span id="header-date"></span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- STEP 1: SELECT PERSON -->
+  <div class="step-select" id="step-select">
+    <div class="step-label">Passo 1 de 2</div>
+    <h2>Quem é você?</h2>
+    <div class="person-grid">
+      <button class="person-btn" onclick="selectPerson('Pedro')">Pedro</button>
+      <button class="person-btn" onclick="selectPerson('Edgar')">Edgar</button>
+      <button class="person-btn" onclick="selectPerson('Giovana')">Giovana</button>
+      <button class="person-btn" onclick="selectPerson('Camila')">Camila</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: TASK FORM -->
+  <div id="task-form">
+    <div class="form-header">
+      <div class="who" id="form-who"></div>
+      <h2>Confirme suas tarefas de hoje</h2>
+    </div>
+    <div id="tasks-container"></div>
+    <div class="submit-wrap">
+      <button class="submit-btn" onclick="submitForm()">Enviar confirmações</button>
+      <p class="submit-note">Suas respostas serão enviadas à equipe Ponta.</p>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div id="success-msg">
+    <div class="icon">✅</div>
+    <h2>Confirmações enviadas!</h2>
+    <p>Obrigado. O resumo do dia será gerado pela equipe.</p>
+  </div>
+
+</div>
+
+<script>
+  // ─── DATA ───────────────────────────────────────────────────────────────────
+  const TASKS = {
+    Pedro: {
+      EFFICIENCY: [
+        { client: 'Crianza Suprema', desc: 'TAG 0 alta nos dois currais em todos os equipamentos. Verificar.', priority: '🔴' },
+        { client: 'JBJ', desc: 'Cochos sem funcionar no Intergado 01 e 03. Plataforma sem funcionar no Intergado 03. Verificar.', priority: '🔴' },
+        { client: 'Grama Senepol', desc: 'Verificar leituras de bebedouro, TAG 0 alta há alguns dias. Sem comunicação.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'Sem comunicação. Verificar.', priority: '🔴' },
+        { client: 'FAZU', desc: 'Verificar TAG 0 alta nos bebedouros.', priority: '🔴' },
+        { client: 'Agropecuária HB', desc: 'Verificar alerta de comunicação.', priority: '🔴' },
+      ],
+      BEEF: [
+        { client: 'Frisia', desc: 'Acompanhar com o Elinton a resolução do problema da plataforma no curral B6.', priority: '🔴' },
+      ],
+      SCIENCE: [
+        { client: 'IntegralMix', desc: 'Verificar TAG 0 alta no cocho do Dieta Total 2. O problema com uma porta foi resolvido?', priority: '🔴' },
+        { client: 'Pasto IZ', desc: 'Verificar TAG 0 alta nos cochos dos currais 2, 4, 6, 13, 14 e 15 e no bebedouro do curral 3.', priority: '🔴' },
+        { client: 'IZ Bovinos', desc: 'Verificar comunicação e avisar Roberta.', priority: '🔴' },
+        { client: 'IF Rio Pomba', desc: 'Verificar cocho sem funcionar na Baia 01 e Baia 02.', priority: '🔴' },
+        { client: 'São Marcelo', desc: 'TAG 0 alta nos cochos e bebedouros. Verificar.', priority: '🔴' },
+      ],
+    },
+    Edgar: {
+      EFFICIENCY: [
+        { client: 'Twynam', desc: 'Problemas de equipamentos sem funcionar no PEN 03 (plataforma e cocho), TAG 0 alta no PEN 01. Verificar.', priority: '🔴' },
+        { client: 'Casa Branca', desc: 'Estará no cliente hoje.', priority: '🟢' },
+      ],
+      SCIENCE: [
+        { client: 'UFLA (Gado de Corte)', desc: 'Visitará o cliente amanhã.', priority: '🟢' },
+      ],
+      SUÍNOS: [
+        { client: 'BRF', desc: 'Cobrou o cliente de enviar cadastro de animais para monitorarmos.', priority: '🟡' },
+      ],
+    },
+    Giovana: {
+      EFFICIENCY: [
+        { client: 'Whenby Farm', desc: 'Verificar plataforma sem funcionar no PEN 04.', priority: '🔴' },
+        { client: 'Calidad', desc: 'TAG 0 alta nos dois currais. Verificar.', priority: '🔴' },
+        { client: 'Água Preta', desc: 'Verificar TAG 0 alta nos cochos do Curral 1 e 2, além de alerta de animais no Curral 2.', priority: '🔴' },
+      ],
+      BEEF: [
+        { client: 'Varginha', desc: 'Acompanhar animais sem processamento. Enviar por e-mail as pendências da Varginha.', priority: '🟡' },
+        { client: 'Agroporto', desc: 'Verificar se os dados estão subindo.', priority: '🟡' },
+      ],
+      SCIENCE: [
+        { client: 'Campanelli', desc: 'Verificar TAG 0 alta no EX C9.', priority: '🔴' },
+        { client: 'Cachoeira 2B', desc: 'Verificar alertas de animais e ajustar se necessário.', priority: '🟡' },
+      ],
+    },
+    Camila: {
+      EFFICIENCY: [
+        { client: 'Twynam', desc: 'Realizar a entrega dos resultados da prova finalizada.', priority: '🔴' },
+        { client: 'Calidad', desc: 'Alerta de animais no CR01 e CR02. Verificar.', priority: '🔴' },
+        { client: 'Nelore Mafra', desc: 'Verificar alertas de animais no curral 01.', priority: '🟡' },
+        { client: 'PROJETOPAC', desc: 'Verificar alertas de animais no curral unificado e no curral 04.', priority: '🟡' },
+        { client: 'Água Preta', desc: 'Verificar alerta de animais no Curral 2 junto com a Giovana.', priority: '🔴' },
+        { client: 'Pontieri', desc: 'Verificar alerta de animais.', priority: '🟡' },
+      ],
+    },
+  };
+
+  const STATUS_OPTIONS = [
+    { label: '✅ Sim, concluído',         value: 'Sim, concluído',         cls: 'selected-sim' },
+    { label: '🔄 Não, ainda no processo', value: 'Não, ainda no processo', cls: 'selected-proc' },
+    { label: '⏸️ Não, ainda não atuei',   value: 'Não, ainda não atuei',   cls: 'selected-nao' },
+    { label: '📵 Não, sem resposta',       value: 'Não, sem resposta',      cls: 'selected-semres' },
+  ];
+
+  let selectedPerson = null;
+  const selections = {}; // { "ClientName": { status, obs } }
+
+  // ─── DATE ───────────────────────────────────────────────────────────────────
+  const now = new Date();
+  document.getElementById('header-date').textContent =
+    now.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+
+  // ─── SELECT PERSON ──────────────────────────────────────────────────────────
+  function selectPerson(name) {
+    selectedPerson = name;
+    document.querySelectorAll('.person-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    buildForm(name);
+    setTimeout(() => {
+      document.getElementById('task-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+
+  // ─── BUILD FORM ─────────────────────────────────────────────────────────────
+  function buildForm(name) {
+    const personTasks = TASKS[name] || {};
+    const container = document.getElementById('tasks-container');
+    container.innerHTML = '';
+
+    document.getElementById('form-who').textContent = name.toUpperCase();
+
+    const hasTasks = Object.values(personTasks).some(arr => arr.length > 0);
+    if (!hasTasks) {
+      container.innerHTML = '<p style="color:var(--muted);padding:20px 0;">Nenhuma tarefa registrada para hoje.</p>';
+      document.getElementById('task-form').classList.add('visible');
+      return;
+    }
+
+    Object.entries(personTasks).forEach(([bu, tasks]) => {
+      if (!tasks || tasks.length === 0) return;
+      const section = document.createElement('div');
+      section.className = 'bu-section';
+      section.innerHTML = `<div class="bu-label">${bu}</div>`;
+
+      tasks.forEach(task => {
+        const key = `${name}__${bu}__${task.client}`;
+        if (!selections[key]) selections[key] = { status: null, obs: '' };
+
+        const card = document.createElement('div');
+        card.className = 'task-card';
+
+        const statusBtns = STATUS_OPTIONS.map((opt, i) =>
+          `<button class="status-btn" data-key="${key}" data-idx="${i}" data-value="${opt.value}" data-cls="${opt.cls}"
+            onclick="selectStatus('${key}', this)">${opt.label}</button>`
+        ).join('');
+
+        card.innerHTML = `
+          <div class="priority">${task.priority}</div>
+          <div class="client-name">${task.client}</div>
+          <div class="description">${task.desc}</div>
+          <div class="status-label">A tarefa/problema foi resolvida?</div>
+          <div class="status-options">${statusBtns}</div>
+          <textarea class="obs-field" placeholder="Complemento opcional (ex: aguardando retorno do cliente, escalado para suporte…)"
+            oninput="selections['${key}'].obs = this.value" rows="2"></textarea>
+        `;
+        section.appendChild(card);
+      });
+
+      container.appendChild(section);
+    });
+
+    document.getElementById('task-form').classList.add('visible');
+  }
+
+  // ─── SELECT STATUS ──────────────────────────────────────────────────────────
+  function selectStatus(key, btn) {
+    const allBtns = document.querySelectorAll(`.status-btn[data-key="${key}"]`);
+    allBtns.forEach(b => {
+      b.classList.remove('selected-sim', 'selected-proc', 'selected-nao', 'selected-semres');
+    });
+    const cls = btn.getAttribute('data-cls');
+    btn.classList.add(cls);
+    selections[key].status = btn.getAttribute('data-value');
+  }
+
+  // ─── SUBMIT ─────────────────────────────────────────────────────────────────
+  async function submitForm() {
+    const personTasks = TASKS[selectedPerson] || {};
+    const hasTasks = Object.values(personTasks).some(arr => arr.length > 0);
+
+    if (hasTasks) {
+      const incomplete = Object.entries(selections).filter(([k, v]) =>
+        k.startsWith(selectedPerson + '__') && !v.status
+      );
+      if (incomplete.length > 0) {
+        alert(`Por favor, responda todas as tarefas antes de enviar. (${incomplete.length} sem resposta)`);
+        return;
+      }
+    }
+
+    // Build payload for Formspree
+    const lines = [];
+    Object.entries(TASKS[selectedPerson] || {}).forEach(([bu, tasks]) => {
+      tasks.forEach(task => {
+        const key = `${selectedPerson}__${bu}__${task.client}`;
+        const s = selections[key] || {};
+        lines.push(`[${bu}] ${task.client}: ${s.status || '—'}${s.obs ? ' | Obs: ' + s.obs : ''}`);
+      });
+    });
+
+    const payload = {
+      _subject: `Daily Ponta – ${selectedPerson} – ${now.toLocaleDateString('pt-BR')}`,
+      Responsável: selectedPerson,
+      Data: now.toLocaleDateString('pt-BR'),
+      Respostas: lines.join('\n'),
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/xzdqwalk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        document.getElementById('step-select').style.display = 'none';
+        document.getElementById('task-form').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        alert('Erro ao enviar. Tente novamente ou contacte o Paulo.');
+      }
+    } catch (e) {
+      alert('Sem conexão. Verifique sua internet e tente novamente.');
+    }
+  }
+</script>
+</body>
+</html>
