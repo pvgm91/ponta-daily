@@ -457,9 +457,9 @@
           <div class="priority">${task.priority}</div>
           <div class="client-name">${task.client}</div>
           <div class="description">${task.desc}</div>
-          <div class="status-label">A tarefa/problema foi resolvida?</div>
+          <div class="status-label">Esta tarefa/problema foi resolvida?</div>
           <div class="status-options">${statusBtns}</div>
-          <textarea class="obs-field" placeholder="Complemento opcional (ex: aguardando retorno do cliente, escalado para suporte…)"
+          <textarea class="obs-field" placeholder="Complemento opcional (ex: cliente pediu para entrar em contato amanhã…)"
             oninput="selections['${key}'].obs = this.value" rows="2"></textarea>
         `;
         section.appendChild(card);
@@ -497,7 +497,7 @@
       }
     }
 
-    // Build payload for Formspree
+    // Build payload for Web3Forms
     const lines = [];
     Object.entries(TASKS[selectedPerson] || {}).forEach(([bu, tasks]) => {
       tasks.forEach(task => {
@@ -515,10 +515,10 @@
     };
 
     try {
-      const res = await fetch('https://formspree.io/f/xzdqwalk', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, access_key: 'dfaba7b3-dcd0-40ba-af15-a5620f2257af' }),
       });
 
       if (res.ok) {
