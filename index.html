@@ -300,7 +300,6 @@
     <h2>Quem é você?</h2>
     <div class="person-grid">
       <button class="person-btn" onclick="selectPerson('Pedro')">Pedro</button>
-      <button class="person-btn" onclick="selectPerson('Edgar')">Edgar</button>
       <button class="person-btn" onclick="selectPerson('Giovana')">Giovana</button>
       <button class="person-btn" onclick="selectPerson('Camila')">Camila</button>
     </div>
@@ -334,58 +333,45 @@
     Pedro: {
       EFFICIENCY: [
         { client: 'Crianza Suprema', desc: 'TAG 0 alta nos dois currais em todos os equipamentos. Verificar.', priority: '🔴' },
-        { client: 'JBJ', desc: 'Cochos sem funcionar no Intergado 01 e 03. Plataforma sem funcionar no Intergado 03. Verificar.', priority: '🔴' },
-        { client: 'Grama Senepol', desc: 'Verificar leituras de bebedouro, TAG 0 alta há alguns dias. Sem comunicação.', priority: '🔴' },
+        { client: 'Grama Senepol', desc: 'Verificar leituras de bebedouro, TAG 0 alta há alguns dias. Plataforma 715 sem funcionar do lote de cima.', priority: '🔴' },
         { client: 'Nelore Confiança', desc: 'Sem comunicação. Verificar.', priority: '🔴' },
+        { client: 'Nelore Mafra', desc: 'Cocho 2296 sem dados. Verificar.', priority: '🔴' },
         { client: 'FAZU', desc: 'Verificar TAG 0 alta nos bebedouros.', priority: '🔴' },
-        { client: 'Agropecuária HB', desc: 'Verificar alerta de comunicação.', priority: '🔴' },
+        { client: 'Água Preta', desc: 'Verificar TAG 0 alta nos cochos do Curral 1 e 2. Temos 2 cochos sem registrar tag nenhuma.', priority: '🔴' },
       ],
       BEEF: [
         { client: 'Frisia', desc: 'Acompanhar com o Elinton a resolução do problema da plataforma no curral B6.', priority: '🔴' },
       ],
       SCIENCE: [
         { client: 'IntegralMix', desc: 'Verificar TAG 0 alta no cocho do Dieta Total 2. O problema com uma porta foi resolvido?', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'Verificar TAG 0 alta nos cochos dos currais 2, 4, 6, 13, 14 e 15 e no bebedouro do curral 3.', priority: '🔴' },
-        { client: 'IZ Bovinos', desc: 'Verificar comunicação e avisar Roberta.', priority: '🔴' },
-        { client: 'IF Rio Pomba', desc: 'Verificar cocho sem funcionar na Baia 01 e Baia 02.', priority: '🔴' },
+        { client: 'Pasto IZ', desc: 'Verificar TAG 0 alta nos cochos dos currais 2 e 14 e no bebedouro do curral 3.', priority: '🔴' },
+        { client: 'EPAMIG (Risoleta Neves)', desc: 'TAG 0 nos cochos. Verificar.', priority: '🔴' },
         { client: 'São Marcelo', desc: 'TAG 0 alta nos cochos e bebedouros. Verificar.', priority: '🔴' },
-      ],
-    },
-    Edgar: {
-      EFFICIENCY: [
-        { client: 'Twynam', desc: 'Problemas de equipamentos sem funcionar no PEN 03 (plataforma e cocho), TAG 0 alta no PEN 01. Verificar.', priority: '🔴' },
-        { client: 'Casa Branca', desc: 'Estará no cliente hoje.', priority: '🟢' },
-      ],
-      SCIENCE: [
-        { client: 'UFLA (Gado de Corte)', desc: 'Visitará o cliente amanhã.', priority: '🟢' },
-      ],
-      SUÍNOS: [
-        { client: 'BRF', desc: 'Cobrou o cliente de enviar cadastro de animais para monitorarmos.', priority: '🟡' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
         { client: 'Whenby Farm', desc: 'Verificar plataforma sem funcionar no PEN 04.', priority: '🔴' },
-        { client: 'Calidad', desc: 'TAG 0 alta nos dois currais. Verificar.', priority: '🔴' },
-        { client: 'Água Preta', desc: 'Verificar TAG 0 alta nos cochos do Curral 1 e 2, além de alerta de animais no Curral 2.', priority: '🔴' },
+        { client: 'Bull Barn', desc: 'Sem comunicação. Acompanhar.', priority: '🔴' },
+        { client: 'JBJ', desc: 'Realizaram trocas de TAGs lá. Acompanhar a leitura dos animais.', priority: '🟡' },
+        { client: 'Canaa', desc: 'TAG 0 nas plataformas dos currais 02 e 03. Verificar.', priority: '🔴' },
+        { client: 'Central Bela Vista / Qualitas', desc: 'Currais 03, 04 e 05 sem dados. Verificar se tem animais.', priority: '🟡' },
+        { client: 'Katispera', desc: 'Coletor 274 sem dados. Avisar.', priority: '🔴' },
+        { client: 'Nelore Visual', desc: 'Sem comunicação. Avisar a fazenda.', priority: '🔴' },
+        { client: 'Agropecuária HB', desc: 'Verificar alerta de comunicação.', priority: '🔴' },
+        { client: 'São Pedro', desc: 'Aguardando planilha de cadastro correta. Giovana está em contato.', priority: '🟡' },
       ],
       BEEF: [
-        { client: 'Varginha', desc: 'Acompanhar animais sem processamento. Enviar por e-mail as pendências da Varginha.', priority: '🟡' },
-        { client: 'Agroporto', desc: 'Verificar se os dados estão subindo.', priority: '🟡' },
-      ],
-      SCIENCE: [
-        { client: 'Campanelli', desc: 'Verificar TAG 0 alta no EX C9.', priority: '🔴' },
-        { client: 'Cachoeira 2B', desc: 'Verificar alertas de animais e ajustar se necessário.', priority: '🟡' },
+        { client: 'Varginha', desc: 'Poucas leituras de animais. Aguardando verificação geral dos equipamentos pela fazenda.', priority: '🟡' },
+        { client: 'Agroporto', desc: 'Sem comunicação, sem retorno.', priority: '🟡' },
       ],
     },
     Camila: {
       EFFICIENCY: [
         { client: 'Twynam', desc: 'Realizar a entrega dos resultados da prova finalizada.', priority: '🔴' },
-        { client: 'Calidad', desc: 'Alerta de animais no CR01 e CR02. Verificar.', priority: '🔴' },
-        { client: 'Nelore Mafra', desc: 'Verificar alertas de animais no curral 01.', priority: '🟡' },
-        { client: 'PROJETOPAC', desc: 'Verificar alertas de animais no curral unificado e no curral 04.', priority: '🟡' },
         { client: 'Água Preta', desc: 'Verificar alerta de animais no Curral 2 junto com a Giovana.', priority: '🔴' },
-        { client: 'Pontieri', desc: 'Verificar alerta de animais.', priority: '🟡' },
+        { client: 'JBJ', desc: 'Verificar pendência de animais junto da Giovana.', priority: '🔴' },
+        { client: 'Calidad', desc: 'Verificar se a prova voltou a funcionar, foi passado pro Luigi.', priority: '🔴' },
       ],
     },
   };
