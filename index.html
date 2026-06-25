@@ -300,6 +300,7 @@
     <h2>Quem é você?</h2>
     <div class="person-grid">
       <button class="person-btn" onclick="selectPerson('Pedro')">Pedro</button>
+      <button class="person-btn" onclick="selectPerson('Edgar')">Edgar</button>
       <button class="person-btn" onclick="selectPerson('Giovana')">Giovana</button>
       <button class="person-btn" onclick="selectPerson('Camila')">Camila</button>
       <button class="person-btn" onclick="selectPerson('Paulo')">Paulo</button>
@@ -333,46 +334,60 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Grama Senepol', desc: 'Verificar TAG 0 alta que tivemos ontem no Lote de Cima. Estivemos no cliente ontem.', priority: '🔴' },
-        { client: 'Nelore Confiança', desc: 'TAG 0 no curral 2. Agindo junto do cliente, vão trocar o inversor hoje.', priority: '🔴' },
-        { client: 'Canaa', desc: 'Cocho sem funcionar no curral 02, 03 e 04. Acompanhar visita no cliente hoje.', priority: '🔴' },
-        { client: 'Nelore Mafra', desc: 'Acompanhar problema com o cocho sem funcionar. Verificar se está isolado e diminuir dos alertas.', priority: '🔴' },
-        { client: 'Central Bela Vista / Qualitas', desc: 'Sem comunicação nos currais 6, 7, 8 e 9. Curral 3 com alerta de cochos sem funcionar. Verificar.', priority: '🔴' },
-        { client: 'Katispera', desc: 'Sem comunicação com o coletor X3 e X4. Verificar.', priority: '🔴' },
-        { client: 'Agropecuária HB', desc: 'TAG 0 alta no Curral 1. Verificar. Estaremos no cliente hoje.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Verificar TAG 0 alta nos bebedouros do C02 e C04 e nos cochos do Curral 01.', priority: '🔴' },
+        { client: 'Crianza Suprema', desc: 'Sem comunicação. Avisar o Jorge Zavala.', priority: '🔴' },
+        { client: 'Chapadão', desc: 'Comunicação voltou, mas temos um cocho sem funcionar no curral 02-CAPM. Verificar.', priority: '🔴' },
+        { client: 'Canaa', desc: 'Cocho sem funcionar no curral 04 e TAG 0 alta no Curral 2. Acompanhar.', priority: '🔴' },
+        { client: 'Central Bela Vista / Qualitas', desc: 'Sem comunicação nos currais 6, 7, 8, 9 e 3, 4, 5. Verificar.', priority: '🔴' },
+        { client: 'Baviera', desc: 'Cocho 2323 parou de funcionar no curral 12 e TAG 0 alta no curral 11 e 12, aparenta ser ruído elétrico. Verificar.', priority: '🔴' },
+        { client: 'Agropecuária HB', desc: 'TAG 0 alta no Curral 1. Verificar e pedir prioridade na resolução, está impactando nossa prova. Estaremos no cliente hoje.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Verificar TAG 0 alta nos bebedouros do C02 e C04.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'IntegralMix', desc: 'Verificar a questão dos equipamentos desligando de noite e cocho sem funcionar.', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'Verificar TAG 0 alta no cocho do curral 4 e no bebedouro do curral 8.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'Verificar TAG 0 alta nos dois currais.', priority: '🔴' },
+        { client: 'UDESC Leite', desc: 'Verificar se estão usando, alerta de cocho em todos os currais.', priority: '🔴' },
+        { client: 'Areão', desc: 'Verificar se a TAG 0 em todos os currais é recorrente de limpeza.', priority: '🟡' },
+        { client: 'Embrapa Gado de Leite', desc: 'Verificar a Câmara Climática, está acusando alerta de cocho.', priority: '🔴' },
+        { client: 'Campus USP Fernando Costa', desc: 'Verificar o cocho 4036 que não está funcionando direito.', priority: '🔴' },
+      ],
+    },
+    Edgar: {
+      EFFICIENCY: [
+        { client: 'Twynam', desc: 'Continuamos com TAG 0 alta no C01.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'Em contato para resolver problema de TAG 0.', priority: '🔴' },
+      ],
+      BEEF: [
+        { client: 'Frisia', desc: 'Viabilizando a visita no cliente. Comunicação retornou, mas temos plataforma sem funcionar no B6.', priority: '🔴' },
+      ],
+      SCIENCE: [
+        { client: 'IntegralMix', desc: 'Verificar a questão dos equipamentos desligando de noite e cocho sem funcionar. Precisamos de uma definição, pois teoricamente esta prova está perdida.', priority: '🔴' },
+        { client: 'São Marcelo', desc: 'Eles falaram algo sobre entrega de resultados? Precisamos saber o tipo de serviço que vamos prestar para eles.', priority: '🟡' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Chapadão', desc: 'Sem comunicação. Em contato com o Rayann.', priority: '🔴' },
         { client: 'Twynam', desc: 'Acompanhar os dados de hoje.', priority: '🔴' },
-        { client: 'Baviera', desc: 'TAG 0 alta no curral 12. Verificar.', priority: '🔴' },
         { client: 'São Pedro', desc: 'Fazenda está sem comunicação. Acompanhar.', priority: '🔴' },
       ],
       BEEF: [
-        { client: 'Agroporto', desc: 'Acompanhar calibração da balança descalibrada.', priority: '🔴' },
-        { client: 'São Miguel', desc: 'Tentar enviar relatório semanal.', priority: '🟡' },
+        { client: 'Agroporto', desc: 'Acompanhar calibração da balança descalibrada. Cobrar novamente.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'Embrapa Gado de Leite', desc: 'Acompanhar comunicação.', priority: '🟡' },
+        { client: 'Campanelli', desc: 'Verificar TAG 0 no EX C9.', priority: '🔴' },
+        { client: 'IZ Bovinos', desc: 'TAG 0 alta. Verificar.', priority: '🔴' },
+        { client: 'La Magnolia', desc: 'Resolver pendências de cadastro.', priority: '🟡' },
         { client: 'Nelore Calil', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'São Marcelo', desc: 'Verificar alertas de animais.', priority: '🟡' },
       ],
       SUÍNOS: [
-        { client: 'BRF', desc: 'Verificar alertas de animais.', priority: '🟡' },
+        { client: 'BRF', desc: 'Verificar TAG 0. Me chamar para olharmos juntos.', priority: '🟡' },
       ],
     },
     Camila: {
       EFFICIENCY: [
-        { client: 'Calidad', desc: 'Verificar alerta de animais no CR01.', priority: '🟡' },
+        { client: 'Twynam', desc: 'Verificar alertas de animais.', priority: '🔴' },
+        { client: 'Grama Senepol', desc: 'Verificar alerta de animais no lote de cima.', priority: '🟡' },
         { client: 'Canaa', desc: 'Verificar alertas de animais no A0003.', priority: '🔴' },
-        { client: 'PROJETOPAC', desc: 'Realizou entrega da prova ontem. Descobrir previsão de início de uma nova prova.', priority: '🟢' },
-        { client: 'ABCZ', desc: 'Verificar alertas de animais no curral 2.', priority: '🔴' },
+        { client: 'Baviera', desc: 'Anular os dados do dia 23 e 24 do curral 12 e do dia 24 do curral 11.', priority: '🔴' },
+        { client: 'Katispera', desc: 'Verificar alerta de animais.', priority: '🟡' },
       ],
     },
     Paulo: {
