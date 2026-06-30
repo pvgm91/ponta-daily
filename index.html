@@ -334,30 +334,27 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Baviera', desc: 'Cocho 2318 (curral 11) parou de funcionar na sexta-feira. Verificar.', priority: '🔴' },
         { client: 'Katispera', desc: 'Verificar comunicação do X1 e X2 que desconectou novamente.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Verificar TAG 0 alta nos bebedouros do C02 e C04.', priority: '🔴' },
       ],
       BEEF: [
-        { client: 'Agroporto', desc: 'Acompanhar calibração da balança descalibrada. Cobrar novamente.', priority: '🔴' },
+        { client: 'Varginha', desc: 'Chamar o Matheus para resolvermos as pendências de equipamentos.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'IntegralMix', desc: 'Verificar TAG 0 no Dieta Total 01 e 02.', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'TAG 0 demais em todos os equipamentos dos piquetes 05, 06, 07 e 08 e nos cochos dos piquetes 02, 04, 08 e 14.', priority: '🔴' },
-        { client: 'EPAMIG (Risoleta Neves)', desc: 'Verificar TAG 0 nos bebedouros.', priority: '🔴' },
-        { client: 'Embrapa Gado de Leite', desc: 'Estão sem comunicação. Avisar.', priority: '🔴' },
+        { client: 'UNESP Bubalinos', desc: 'Cocho 903 parou de funcionar. Verificar.', priority: '🔴' },
+        { client: 'IntegralMix', desc: 'Verificar TAG 0 no Dieta Total 01 e 02. Não resolveu o problema, tivemos TAG 0 o dia todo ontem.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'Dar uma geral neste cliente, está cheio de problemas: L3, L6 e L10 sem dados das plataformas, L6 e L11 sem dados de cochos, L5 com TAG 0 alta.', priority: '🔴' },
+        { client: 'EPAMIG (Risoleta Neves)', desc: 'Verificar TAG 0 nos bebedouros. Acompanhar testes com a Debora.', priority: '🔴' },
+        { client: 'Embrapa Gado de Leite', desc: 'Dados do Free Stall 02 estranhos. Estava sem comunicação, retornou, temos dados de ontem, mas sem nenhum dado significativo. Sem dados de balanças desde o dia 25/06.', priority: '🔴' },
+        { client: 'Embrapa Caprinos e Ovinos', desc: 'Cocho 4060 sem funcionar ontem e hoje.', priority: '🔴' },
         { client: 'Campus USP Fernando Costa', desc: 'Verificar o cocho 4036 que não está funcionando direito, e também estamos sem comunicação.', priority: '🔴' },
       ],
     },
     Edgar: {
       EFFICIENCY: [
-        { client: 'Warren Farm', desc: 'Em contato com o Rhys, pois a Europa está passando por onda de calor severa e os bebedouros não estão dando conta de abastecer. Quer saber um jeito de aumentar a vazão.', priority: '🟡' },
-        { client: 'Whenby Farm', desc: 'Em contato com o Rhys, pois a Europa está passando por onda de calor severa e os bebedouros não estão dando conta de abastecer. Quer saber um jeito de aumentar a vazão.', priority: '🟡' },
-        { client: 'Twynam', desc: 'Identificou algumas antenas com leitura ruim e passou instruções para o Luiz. Ainda não está resolvido, está tratando.', priority: '🔴' },
-        { client: 'Nelore Confiança', desc: 'TAG 0 em todos os currais. Agindo junto do cliente, em contato com a engenheira.', priority: '🔴' },
-        { client: 'Agropecuária HB', desc: 'TAG 0 alta no Curral 1. O que fazemos? Estamos no cliente.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'TAG 0 em todos os currais. Agindo junto do cliente em contato com a engenheira. Plataforma no C02 parou de funcionar.', priority: '🔴' },
       ],
       BEEF: [
+        { client: 'Agroporto', desc: 'Problema para conversar com a fazenda, temos uma balança que precisa de calibração. Estamos há uma semana cobrando e eles não respondem.', priority: '🔴' },
         { client: 'Frisia', desc: 'Viabilizando a visita no cliente. Sem comunicação, e temos plataforma sem funcionar no B6.', priority: '🔴' },
       ],
       SUÍNOS: [
@@ -366,33 +363,24 @@
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Bull Barn', desc: 'Verificar TAG 0 alta na Bull Barn e avisar o Austin.', priority: '🔴' },
         { client: 'Chapadão', desc: 'Sem comunicação. Avisar o Rayann.', priority: '🔴' },
-        { client: 'Twynam', desc: 'Ainda não está resolvido.', priority: '🔴' },
-        { client: 'Nelore Mafra', desc: 'Arrumar os alertas de cochos do curral 2, temos um cocho isolado.', priority: '🟡' },
-        { client: 'Casa Branca', desc: 'Verificar se acabou a prova.', priority: '🟡' },
-        { client: 'ABCZ', desc: 'Cadastrar no Efficiency.', priority: '🔴' },
+        { client: 'Agropecuária HB', desc: 'Acompanhar, aparentemente resolvido o problema da TAG 0.', priority: '🟡' },
         { client: 'São Pedro', desc: 'Fazenda está sem comunicação. Acompanhar. Precisamos explicar que eles podem estar perdendo a prova, muitos dias sem dados.', priority: '🔴' },
       ],
+      BEEF: [
+        { client: 'São Miguel', desc: 'Mandar o relatório semanal.', priority: '🟡' },
+      ],
       SCIENCE: [
-        { client: 'Areão', desc: 'Conferir TAG 0 nos bebedouros (provavelmente é só limpeza).', priority: '🟡' },
-        { client: 'EPAMIG (Getúlio Vargas)', desc: 'Verificar TAG 0 nos cochos do C02.', priority: '🔴' },
         { client: 'DSM', desc: 'Verificar se o experimento está acontecendo ainda, alertas de cochos.', priority: '🔴' },
+        { client: 'Nelore Calil', desc: 'Mandar o relatório semanal.', priority: '🟡' },
       ],
     },
     Camila: {
       EFFICIENCY: [
-        { client: 'Abba', desc: 'Verificar alertas de animais.', priority: '🟡' },
-        { client: 'Grama Senepol', desc: 'Verificar alerta de animais no lote de cima. Atualizar nos alertas do SI, se necessário.', priority: '🟡' },
-        { client: 'Baviera', desc: 'Anular os dados do dia 27, 28 e 29 do curral 11.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Verificar alertas de animais do C01.', priority: '🔴' },
+        { client: 'JBJ', desc: 'Verificar alertas de animais no Intergado 03.', priority: '🟡' },
       ],
     },
-    Paulo: {
-      EFFICIENCY: [
-        { client: 'São Marcelo', desc: 'Verificar trocas de TAG que não estão funcionando no DS.', priority: '🔴' },
-      ],
-    },
+    Paulo: {},
   };
 
   const STATUS_OPTIONS = [
