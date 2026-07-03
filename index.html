@@ -162,6 +162,12 @@
       border-radius: 12px;
       padding: 18px 20px;
       margin-bottom: 12px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .task-card.missing {
+      border-color: var(--red);
+      border-width: 2px;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
     }
     .task-card .priority {
       font-size: 13px;
@@ -334,23 +340,30 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Nelore Confiança', desc: 'Verificar balança 1804 que está sem funcionar.', priority: '🔴' },
-        { client: 'Central Bela Vista / Qualitas', desc: 'Cocho 1061 sem dados no curral HCT-09. Acionar o pessoal lá.', priority: '🔴' },
-        { client: 'Katispera', desc: 'Verificar comunicação do X1 e X2 que desconectou novamente, estamos sem dados nesta semana.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Verificar TAG 0 nos bebedouros do C02 e C04 e nos cochos do C03.', priority: '🟢' },
-        { client: 'São Marcelo', desc: 'Cocho 3064 parou de funcionar. Verificar.', priority: '🔴' },
+        { client: 'Crianza Suprema', desc: 'Sem comunicação. Acionar a fazenda.', priority: '🔴' },
+        { client: 'Grama Senepol', desc: 'Sem comunicação. Verificar.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'Verificar balança 1804 que está sem funcionar. TAG 0 nos 2 cochos.', priority: '🔴' },
+        { client: 'Central Bela Vista / Qualitas', desc: 'Coletor 4909 sem comunicação. Avisar.', priority: '🔴' },
+        { client: 'Katispera', desc: 'Verificar comunicação do 274 que desconectou novamente, estamos sem dados nesta semana.', priority: '🔴' },
+        { client: 'HORA', desc: '2 plataformas sem funcionar (4396 e 4381), além de muita TAG 0 nas plataformas. Precisamos atuar nesse cliente antes que encerre a adaptação.', priority: '🔴' },
+        { client: 'São Marcelo', desc: 'TAG 0 nos cochos. Verificar.', priority: '🔴' },
       ],
       BEEF: [
         { client: 'Varginha', desc: 'Chamar o Matheus para resolvermos as pendências de equipamentos.', priority: '🔴' },
-        { client: 'Agroporto', desc: 'Pedir para verificarem a balança que parou de funcionar no D-11.', priority: '🔴' },
+        { client: 'Agroporto', desc: 'Pedir para verificarem a balança que parou de funcionar no E-11 e D-11.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'IntegralMix', desc: 'Verificar TAG 0 no Dieta Total 02, não resolveu o problema, tivemos TAG 0 o dia todo ontem.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'Dar uma geral neste cliente: L3, L6 e L10 sem dados das plataformas, L6 e L11 sem dados de cochos, L5 com TAG 0 alta. Coletor 61 sem dados.', priority: '🔴' },
+        { client: 'IntegralMix', desc: 'Coletor 299 sem comunicação. Verificar TAG 0 no Dieta Total 02, não resolveu o problema.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'Verificar se precisamos atualizar quantidade de cochos utilizados.', priority: '🔴' },
         { client: 'Embrapa Gado de Leite', desc: 'Verificar TAG 0 alta na Câmara Climática.', priority: '🔴' },
+        { client: 'Campus USP Fernando Costa', desc: 'Cocho 4038 e 4039 sem dados. Verificar.', priority: '🔴' },
+        { client: 'UFRGS', desc: 'Cocho 1082 sem dados. Verificar.', priority: '🔴' },
       ],
     },
     Edgar: {
+      EFFICIENCY: [
+        { client: 'Nelore Confiança', desc: 'TAG 0 nos 2 cochos. O que resolvemos?', priority: '🔴' },
+      ],
       BEEF: [
         { client: 'Agroporto', desc: 'Problema para conversar com a fazenda, balança que precisa de calibração. Estamos há uma semana cobrando e eles não respondem.', priority: '🔴' },
         { client: 'Frisia', desc: 'Viabilizando a visita no cliente. Sem comunicação, e temos plataforma sem funcionar no B6.', priority: '🔴' },
@@ -360,19 +373,31 @@
       ],
     },
     Giovana: {
-      EFFICIENCY: [
-        { client: 'HORA', desc: 'Prova iniciou. Fazer cadastro.', priority: '🟡' },
-        { client: 'São Pedro', desc: 'Comunicação voltou. Verificar como estão os dados para darmos reinício na prova.', priority: '🔴' },
+      BEEF: [
+        { client: 'Varginha', desc: 'Enviar e-mail com todas as pendências de animais.', priority: '🔴' },
       ],
       SCIENCE: [
         { client: 'CMA', desc: 'Verificar alertas.', priority: '🟡' },
-        { client: 'Nelore Calil', desc: 'Mandar o relatório semanal.', priority: '🟡' },
+        { client: 'UFU Corte', desc: 'Aparentemente prova acabou. Entrar em contato com o professor Felipe.', priority: '🟡' },
       ],
     },
     Camila: {
       EFFICIENCY: [
-        { client: 'Canaa', desc: 'Enviaram a dieta da prova passada. Entregar os resultados.', priority: '🟡' },
-        { client: 'São Pedro', desc: 'Comunicação voltou. Verificar como estão os dados para darmos reinício na prova.', priority: '🔴' },
+        { client: 'JBJ', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Twynam', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Abba', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Calidad', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Canaa', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Nelore Mafra', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'FAZU', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Baviera', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Katispera', desc: 'Enviar alertas semanais.', priority: '🔴' },
+        { client: 'Nelore Visual', desc: 'Verificar possibilidade de envio de alertas semanais.', priority: '🟡' },
+        { client: 'Água Preta', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Agropecuária HB', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'São Miguel (Eff)', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'Pontieri', desc: 'Enviar alertas semanais.', priority: '🟡' },
+        { client: 'São Marcelo', desc: 'Verificar possibilidade de envio de alertas semanais.', priority: '🔴' },
       ],
     },
     Paulo: {},
@@ -464,6 +489,8 @@
     const cls = btn.getAttribute('data-cls');
     btn.classList.add(cls);
     selections[key].status = btn.getAttribute('data-value');
+    const card = btn.closest('.task-card');
+    if (card) card.classList.remove('missing');
   }
 
   // ─── SUBMIT ─────────────────────────────────────────────────────────────────
@@ -471,12 +498,21 @@
     const personTasks = TASKS[selectedPerson] || {};
     const hasTasks = Object.values(personTasks).some(arr => arr.length > 0);
 
+    // Clear previous highlights
+    document.querySelectorAll('.task-card.missing').forEach(c => c.classList.remove('missing'));
+
     if (hasTasks) {
       const incomplete = Object.entries(selections).filter(([k, v]) =>
         k.startsWith(selectedPerson + '__') && !v.status
       );
       if (incomplete.length > 0) {
-        alert(`Por favor, responda todas as tarefas antes de enviar. (${incomplete.length} sem resposta)`);
+        incomplete.forEach(([key]) => {
+          const card = document.querySelector(`[data-key="${key}"]`)?.closest('.task-card');
+          if (card) card.classList.add('missing');
+        });
+        const firstCard = document.querySelector('.task-card.missing');
+        if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        alert(`Preencha todas as tarefas antes de enviar. Faltam ${incomplete.length} tarefa(s), destacadas em vermelho.`);
         return;
       }
     }
