@@ -340,66 +340,43 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Crianza Suprema', desc: 'Sem comunicação. Acionar a fazenda.', priority: '🔴' },
-        { client: 'Grama Senepol', desc: 'Sem comunicação. Verificar.', priority: '🔴' },
-        { client: 'Nelore Confiança', desc: 'Verificar balança 1804 que está sem funcionar. TAG 0 nos 2 cochos.', priority: '🔴' },
-        { client: 'Central Bela Vista / Qualitas', desc: 'Coletor 4909 sem comunicação. Avisar.', priority: '🔴' },
-        { client: 'Katispera', desc: 'Verificar comunicação do 274 que desconectou novamente, estamos sem dados nesta semana.', priority: '🔴' },
-        { client: 'HORA', desc: '2 plataformas sem funcionar (4396 e 4381), além de muita TAG 0 nas plataformas. Precisamos atuar nesse cliente antes que encerre a adaptação.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'TAG 0 nos cochos. Verificar.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'Verificar balança 1804 que está sem funcionar. TAG 0 no curral 01.', priority: '🔴' },
+        { client: 'São Marcelo', desc: 'TAG 0 nos cochos no curral 01, focado nos cochos 3061 e 3064. Verificar.', priority: '🔴' },
       ],
       BEEF: [
         { client: 'Varginha', desc: 'Chamar o Matheus para resolvermos as pendências de equipamentos.', priority: '🔴' },
-        { client: 'Agroporto', desc: 'Pedir para verificarem a balança que parou de funcionar no E-11 e D-11.', priority: '🔴' },
+        { client: 'Agroporto', desc: 'Pedir para verificarem a balança que parou de funcionar no E-11 (2016).', priority: '🔴' },
       ],
       SCIENCE: [
         { client: 'IntegralMix', desc: 'Coletor 299 sem comunicação. Verificar TAG 0 no Dieta Total 02, não resolveu o problema.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'Verificar se precisamos atualizar quantidade de cochos utilizados.', priority: '🔴' },
-        { client: 'Embrapa Gado de Leite', desc: 'Verificar TAG 0 alta na Câmara Climática.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'Coletor 61 sem dados. Avisar o pessoal.', priority: '🔴' },
         { client: 'Campus USP Fernando Costa', desc: 'Cocho 4038 e 4039 sem dados. Verificar.', priority: '🔴' },
+        { client: 'IF Rio Pomba', desc: 'Cocho 3030 está muito estranho. Verificar.', priority: '🔴' },
         { client: 'UFRGS', desc: 'Cocho 1082 sem dados. Verificar.', priority: '🔴' },
+        { client: 'EPAMIG (Risoleta Neves)', desc: 'Deu certo com a gravação dos firmwares?', priority: '🔴' },
       ],
     },
     Edgar: {
       EFFICIENCY: [
-        { client: 'Nelore Confiança', desc: 'TAG 0 nos 2 cochos. O que resolvemos?', priority: '🔴' },
-      ],
-      BEEF: [
+        { client: 'Nelore Confiança', desc: 'TAG 0 no curral 01.', priority: '🔴' },
+        { client: 'Varginha', desc: 'Enviar e-mail com todas as pendências de animais junto das pendências de equipamentos.', priority: '🔴' },
         { client: 'Agroporto', desc: 'Problema para conversar com a fazenda, balança que precisa de calibração. Estamos há uma semana cobrando e eles não respondem.', priority: '🔴' },
         { client: 'Frisia', desc: 'Viabilizando a visita no cliente. Sem comunicação, e temos plataforma sem funcionar no B6.', priority: '🔴' },
       ],
-      SCIENCE: [
-        { client: 'EPAMIG (Risoleta Neves)', desc: 'Verificar problema das portas que estão bloqueando.', priority: '🔴' },
+      SUÍNOS: [
+        { client: 'BRF', desc: 'TAG 0 na máquina 04 e 05. Verificar.', priority: '🔴' },
       ],
     },
     Giovana: {
-      BEEF: [
-        { client: 'Varginha', desc: 'Enviar e-mail com todas as pendências de animais.', priority: '🔴' },
+      EFFICIENCY: [
+        { client: 'Katispera', desc: 'Coletor comunicou novamente, dados estão subindo. Acompanhar os dados.', priority: '🟡' },
+        { client: 'HORA', desc: 'Parece que o coletor retornou comunicação hoje pela manhã. Acompanhar dados.', priority: '🟡' },
       ],
       SCIENCE: [
-        { client: 'CMA', desc: 'Verificar alertas.', priority: '🟡' },
-        { client: 'UFU Corte', desc: 'Aparentemente prova acabou. Entrar em contato com o professor Felipe.', priority: '🟡' },
+        { client: 'Campanelli', desc: 'Coletor 130 sem comunicação. Avisar.', priority: '🔴' },
       ],
     },
-    Camila: {
-      EFFICIENCY: [
-        { client: 'JBJ', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Twynam', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Abba', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Calidad', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Canaa', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Nelore Mafra', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'FAZU', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Baviera', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Katispera', desc: 'Enviar alertas semanais.', priority: '🔴' },
-        { client: 'Nelore Visual', desc: 'Verificar possibilidade de envio de alertas semanais.', priority: '🟡' },
-        { client: 'Água Preta', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Agropecuária HB', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'São Miguel (Eff)', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'Pontieri', desc: 'Enviar alertas semanais.', priority: '🟡' },
-        { client: 'São Marcelo', desc: 'Verificar possibilidade de envio de alertas semanais.', priority: '🔴' },
-      ],
-    },
+    Camila: {},
     Paulo: {},
   };
 
