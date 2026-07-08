@@ -340,50 +340,46 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Agropecuária HB', desc: 'TAG 0 alta no Curral 1. Verificar.', priority: '🔴' },
-        { client: 'Pontieri', desc: 'Problema com comunicação de dois cochos falhando. O que foi feito sobre isso?', priority: '🔴' },
-        { client: 'HORA', desc: 'TAG 0 alta no CR03. Verificar.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Avaliar os dados, continuamos com TAG 0 nos bebedouros do C02 e C04 e hoje TAG 0 alta nos cochos do C03.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'TAG 0 nos cochos no curral 01, focado nos cochos 3061 e 3064. Verificar.', priority: '🔴' },
+        { client: 'Agropecuária HB', desc: 'Temos cocho sem funcionar no Intergado 04. Sabe nos dizer se retiraram os animais deste curral?', priority: '🔴' },
+        { client: 'HORA', desc: 'TAG 0 alta no CR03, verificar.', priority: '🔴' },
       ],
       BEEF: [
-        { client: 'Varginha', desc: 'Chamar o Matheus para resolvermos as pendências de equipamentos.', priority: '🔴' },
-        { client: 'Agroporto', desc: 'Pedir para verificarem a balança que parou de funcionar no E-11 (2016).', priority: '🔴' },
+        { client: 'Varginha', desc: 'Chamar o Matheus pra resolvermos as pendências de equipamentos e de comunicação.', priority: '🔴' },
+        { client: 'Agroporto', desc: 'Acompanhar calibração da balança com problema.', priority: '🔴' },
+        { client: 'Frisia', desc: 'Aguardando definição de visita técnica. Avisar o Elinton que estamos sem comunicação.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'Nutritaurus', desc: 'Plataformas do E5 e E6 sem funcionar. Verificar.', priority: '🔴' },
-        { client: 'Areão', desc: 'Acompanhar equipamento que não está calibrando. Verificar TAG 0 em todos os bebedouros para confirmar se é só limpeza.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'Coletor 61 sem dados. Avisar o pessoal.', priority: '🔴' },
-        { client: 'EPAMIG (Risoleta Neves)', desc: 'Quais pendências ainda estamos tendo lá? Só há alerta de TAG 0 de bebedouro.', priority: '🔴' },
+        { client: 'Nutritaurus', desc: 'As plataformas do E5 e E6 estão sem funcionar. Verificar.', priority: '🔴' },
+        { client: 'Areão', desc: 'Acompanhar equipamento que não está calibrando, também verificar TAG 0 em todos os bebedouros só pra ter certeza que é só limpeza.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'Coletor 61 sem dados, avisar o pessoal. Acompanhar o que será feito referente aos equipamentos sem funcionar.', priority: '🔴' },
         { client: 'Campus USP Fernando Costa', desc: 'Cocho 4038 e 4039 sem dados. Verificar.', priority: '🔴' },
         { client: 'UFRGS', desc: 'Cocho 1082 sem dados. Verificar.', priority: '🔴' },
-      ],
-    },
-    Edgar: {
-      BEEF: [
-        { client: 'Varginha', desc: 'Enviar e-mail com todas as pendências de animais junto das pendências de equipamentos.', priority: '🔴' },
-        { client: 'Agroporto', desc: 'Problema para conversar com a fazenda, balança que precisa de calibração. Estamos há duas semana cobrando e eles não respondem.', priority: '🔴' },
-        { client: 'Frisia', desc: 'Viabilizando a visita no cliente. Sem comunicação, e temos plataforma sem funcionar no B6.', priority: '🔴' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
         { client: 'Grama Senepol', desc: 'Sem comunicação. Avisar o Paulo.', priority: '🔴' },
-        { client: 'Katispera', desc: 'Verificar alertas do X3 e X4.', priority: '🟡' },
-        { client: 'Agropecuária HB', desc: 'Verificar alertas de animais no curral 04.', priority: '🔴' },
-        { client: 'São Miguel (Eff)', desc: 'Verificar alertas de animais.', priority: '🟡' },
+        { client: 'Central Bela Vista/ Qualitas', desc: 'Sem comunicação. Avisar o Matheus.', priority: '🔴' },
         { client: 'Santa Nazaré', desc: 'Acionar a Lyara novamente e cobrar planilha de dados.', priority: '🟡' },
         { client: 'São Pedro', desc: 'Verificar alertas de animais.', priority: '🟡' },
+        { client: 'São Marcelo', desc: 'Verificar alertas de animais.', priority: '🟡' },
       ],
       BEEF: [
-        { client: 'São Miguel', desc: 'Verificar alertas de animais.', priority: '🟡' },
+        { client: 'São Miguel', desc: 'Enviar o relatório semanal.', priority: '🟡' },
       ],
       SCIENCE: [
-        { client: 'UFRGS', desc: 'Cadastrar no Efficiency.', priority: '🔴' },
+        { client: 'IntegralMix', desc: 'Enviar o relatório semanal. Aproveitar e cobrar sobre a comunicação do coletor 299.', priority: '🔴' },
+        { client: 'EPAMIG (Getúlio Vargas)', desc: 'Verificar TAG 0 que está no C03.', priority: '🔴' },
+        { client: 'Nelore Calil', desc: 'Enviar o relatório semanal.', priority: '🟡' },
       ],
     },
     Camila: {},
-    Paulo: {},
+    Edgar: {},
+    Paulo: {
+      SCIENCE: [
+        { client: 'IntegralMix', desc: 'Reprocessar dados a partir do dia 03/07.', priority: '🔴' },
+      ],
+    },
   };
 
   const STATUS_OPTIONS = [
