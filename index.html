@@ -340,56 +340,67 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
+        { client: 'Crianza Suprema', desc: 'Estamos com TAG 0 alta nas plataformas e bebedouros dos dois currais. Verificar.', priority: '🔴' },
+        { client: 'Central Bela Vista / Qualitas', desc: 'Curral 1 com 100% de TAG 0. Curral 6 com 10% de TAG 0 nos cochos. Curral 7 sem plataforma funcionando e com cochos a menos funcionando também.', priority: '🔴' },
         { client: 'Katispera', desc: 'Verificar plataforma do X1, está sem funcionar.', priority: '🔴' },
-        { client: 'Santa Nazaré', desc: 'Verificar os equipamentos, estamos com TAG 0 muito alta.', priority: '🟡' },
-        { client: 'ABCZ', desc: 'Comunicação falhando em alguns cochos — todos perderam comunicação das 01h até as 06h. Além disso, T0 alta nos cochos do C03 e C04, e nos bebedouros do C01, C02 e C04.', priority: '🔴' },
-        { client: 'São Pedro', desc: 'Dar uma geral nos equipamentos, estamos com T0 alta.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'Estamos com TAG 0 alta no Intergado 01.', priority: '🔴' },
+        { client: 'Santa Nazaré', desc: 'Verificar os equipamentos, estamos com TAG 0 muito alta.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Acompanhar comunicação das placas RFDatas — estava bem ruim a comunicação de alguns cochos. Verificar a TAG 0 alta que estamos tendo no Curral 01 e Curral 02 nos bebedouros e plataformas.', priority: '🔴' },
+        { client: 'Nutritaurus', desc: 'TAG 0 no curral E4, concentrada no cocho 2383, 100kg não identificado. Acionar o Milton.', priority: '🔴' },
       ],
       BEEF: [
+        { client: 'Varginha', desc: 'Estamos no cliente ainda? Alguns currais estão com mais de 50% de TAG 0 nas plataformas.', priority: '🔴' },
         { client: 'Agroporto', desc: 'Verificar situação da plataforma do E-10, sem funcionar por problema com a placa.', priority: '🔴' },
-        { client: 'Frisia', desc: 'Estamos no cliente ainda? Acompanhar visita.', priority: '🟡' },
       ],
       SCIENCE: [
         { client: 'Campanelli', desc: 'Plataforma 2009 sem funcionar. Avisar o pessoal.', priority: '🔴' },
         { client: 'UFLA (Gado de Leite)', desc: 'Estão com bloqueio na rede WIFI para conectar ao nosso coletor.', priority: '🔴' },
-        { client: 'UDESC Corte', desc: 'Sem comunicação. Acionar o pessoal lá.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'Plataformas do curral 04, 06 e 10 sem dados. Chamar o pessoal. Cocho do curral L3, L10 e L11 sem dados.', priority: '🔴' },
-        { client: 'Embrapa Gado de Leite', desc: 'Cocho da câmara climática sem funcionar.', priority: '🔴' },
-        { client: 'Campus USP Fernando Costa', desc: 'Cocho 4036 sem dados.', priority: '🔴' },
+        { client: 'IntegralMix', desc: 'Coletor 299 sem comunicação. Acionar.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'Plataformas do curral 04, 06 e 10 sem dados. Chamar o pessoal. Cocho do curral, L10 e L11 sem dados.', priority: '🔴' },
+        { client: 'Pasto IZ', desc: 'TAG 0 no piquete 2. Acompanhar.', priority: '🔴' },
+        { client: 'Campus USP Fernando Costa', desc: 'Sem comunicação. Cocho 4036 sem dados.', priority: '🔴' },
+        { client: 'UFRGS', desc: 'Cocho 1083 sem dados. Acionar o Lucas.', priority: '🔴' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Chapadão', desc: 'Verificar alertas de animais do curral 1.', priority: '🟡' },
         { client: 'Grama Senepol', desc: 'Vamos dar seguimento aos trabalhos de mineração.', priority: '🟡' },
-        { client: 'Baviera', desc: 'Verificar alertas de T0 alta no curral 13.', priority: '🔴' },
         { client: 'Katispera', desc: 'Vamos acompanhar adaptação.', priority: '🔴' },
-        { client: 'Santa Nazaré', desc: 'Acompanhar adaptação.', priority: '🟡' },
-        { client: 'HORA', desc: 'Acompanhar os animais, vamos verificar TAG 0 alta no CR03.', priority: '🔴' },
-        { client: 'São Pedro', desc: 'Verificar alertas de animais.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'Verificar alertas de animais.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'Verificar alertas de animais.', priority: '🔴' },
-      ],
-      BEEF: [
-        { client: 'São Miguel', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'Santa Nazaré', desc: 'Acompanhar adaptação.', priority: '🔴' },
+        { client: 'HORA', desc: 'Ajustar alertas de cocho do CR04 (está mostrando 8 e são 10).', priority: '🔴' },
+        { client: 'São Pedro', desc: 'Desativar alertas, prova cancelada.', priority: '🟡' },
       ],
       SCIENCE: [
-        { client: 'Nelore Calil', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'CMA', desc: 'CIP 3 não temos dados. Acionar Caio.', priority: '🔴' },
+        { client: 'UNESP Bubalinos', desc: 'Sem comunicação. Acionar o pessoal.', priority: '🔴' },
       ],
     },
-    Camila: {},
+    Camila: {
+      EFFICIENCY: [
+        { client: 'JBJ', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Chapadão', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Twynam', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Abba', desc: 'Temos leitura de 22 animais e temos alertas para 23 animais. Verificar.', priority: '🟡' },
+        { client: 'Calidad', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Grama Senepol', desc: 'Vamos dar seguimento aos trabalhos de mineração.', priority: '🟡' },
+        { client: 'Canaa', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Baviera', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Nelore Visual', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Água Preta', desc: 'Entregar relatório semanal da prova vigente.', priority: '🟡' },
+        { client: 'Agropecuária HB', desc: 'Entregar relatório semanal e preparar envio de provas históricas para a Odaizi.', priority: '🟡' },
+        { client: 'São Miguel (Eff)', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'Pontieri', desc: 'Entregar relatório semanal.', priority: '🟡' },
+        { client: 'HORA', desc: 'Entregar relatório semanal.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Entregar relatório semanal.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'Verificar alertas de animais.', priority: '🔴' },
+        { client: 'São Marcelo', desc: 'Entregar relatório semanal.', priority: '🟡' },
+      ],
+    },
     Edgar: {
       EFFICIENCY: [
         { client: 'Eldorado', desc: 'Acompanhar resolução com o Natanael a respeito dos equipamentos que estão desligando à noite. Temos cocho sem funcionar no C01.', priority: '🔴' },
       ],
     },
-    Paulo: {
-      EFFICIENCY: [
-        { client: 'Abba', desc: 'Prova finalizou ontem. Vamos precisar pedir ajuste de pesagem.', priority: '🟡' },
-        { client: 'São Pedro', desc: 'Prova não está rodando no Efficiency.', priority: '🔴' },
-      ],
-    },
+    Paulo: {},
   };
 
   const STATUS_OPTIONS = [
