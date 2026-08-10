@@ -340,79 +340,65 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Baviera', desc: 'É hoje o check-up dos equipamentos. Acompanhar para iniciarmos a nova prova do jeito certo.', priority: '🟡' },
-        { client: 'HORA', desc: 'Diagnosticado problema de célula ou cabeamento na 1572, vão refazer as emendas.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Pedimos para desligar a resistência e ver se é ela o problema, mas piorou: Curral 02 com T0 plataforma 23,8% e Curral 03 com 31,3%. Acompanhar.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'Acompanhando o Natanael, parece que vão calibrar os cochos 2273 e 2280 hoje cedo. Retiro do Barreiro 01 com 64 de 67 animais e Retiro 02 com 51 de 65.', priority: '🔴' },
-        { client: 'Agronova', desc: 'Currais 01 e 02 sem comunicação, com 22 equipamentos parados; Curral 04 com T0 plataforma 25,2% e Curral 03 com 44 de 73 animais na plataforma. Verificar, equipamentos sem funcionar.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'C-02 com T0 cocho 10,8%. Verificar.', priority: '🔴' },
+        { client: 'Baviera', desc: 'O cliente não respondeu na sexta e o check-up não aconteceu. Reagendar.', priority: '🟡' },
+        { client: 'Katispera', desc: 'X3 e X4 ficaram sem comunicação desde 06/08. Verificar.', priority: '🔴' },
+        { client: 'HORA', desc: 'A plataforma 1572 segue parada desde 05/08 (CR02 com 3 de 4) e o T0 subiu de novo: CR02 com 18,7%, CR04 com 14,6% e CR03 com 13,8%. Seguir no processo das emendas.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Melhorou depois de desligarem a resistência: T0 plataforma caiu de 23,8% para 12,9% no Curral 02 e o Curral 03 normalizou. Segue vermelho no bebedouro (6,0% e 6,5%). Seguir no processo.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'Seguir no processo com o Natanael — os cochos 2273 e 2280 foram calibrados?', priority: '🔴' },
+        { client: 'Agronova', desc: 'Currais 01 e 02 seguem sem comunicação e agora o Curral 03 também perdeu um cocho (1590, desde 06/08); Curral 04 com 62 de 67 animais na plataforma. Seguir no processo.', priority: '🔴' },
       ],
       BEEF: [
-        { client: 'Agroporto', desc: 'E12 segue com 100% de T0 e o F10 com 1 de 2 plataformas. Cliente segue sem responder.', priority: '🔴' },
+        { client: 'Agroporto', desc: 'A balança 2023 parou em 07/08. O cliente vai resolver esta semana; seguir no processo de acompanhar e dar assistência quando tiverem as peças.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'UFPEL', desc: 'Peças enviadas para o cocho fechado. Agora o 3443 também parou (05/08), somando ao 3442. Acompanhar.', priority: '🔴' },
-        { client: 'Premix', desc: 'Tratar as pendências com o cliente, vamos tentar chamá-los novamente.', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'Piquete 10 perdeu comunicação com a plataforma (3556 parado desde 05/08). Verificar.', priority: '🔴' },
-        { client: 'Embrapa Gado de Leite', desc: 'Free Stall 02 sem comunicação; Free Stall 03 com 1 de 2 e o cocho 594 parado. Câmara Climática com T0 cocho 21,3%. Visita marcada para 17/08.', priority: '🔴' },
-        { client: 'IZ Bovinos', desc: 'Além do 1278 (desde 04/08), o cocho 1277 parou em 05/08. Lotes C e D com 11 de 12 cochos e 3 de 4 bebedouros e plataformas. Verificar.', priority: '🔴' },
+        { client: 'UFPEL', desc: 'Resolveu: os cochos voltaram (22 de 19 ativos). Ajustar o cadastro de monitoramento.', priority: '🟢' },
+        { client: 'Premix', desc: 'T0 bebedouro em 56,5% e plataforma em 53,7% (era 3,3% e 16,1%). Continuar no processo de verificar e resolver com o cliente.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'L4, L5 e L9 perderam bebedouro e plataforma (1202, 1203 e 1199, todos em 07/08) e o Animal Housing G6 perdeu o bebedouro em 08/08, com T0 plataforma em 100%. Verificar.', priority: '🔴' },
+        { client: 'Embrapa Gado de Leite', desc: 'Free Stall 02 e 03 seguem com 1 de 2 bebedouros e plataformas (648 e 650 parados desde 05/08); Câmara Climática com T0 cocho 26,6%. Foi dado como concluído na sexta, mas os alertas continuam — visita em 17/08.', priority: '🔴' },
+        { client: 'IZ Bovinos', desc: 'Os dois lotes ficaram sem comunicação desde 07/08. Verificar.', priority: '🔴' },
+        { client: 'UFRGS', desc: 'Os três confinamentos ficaram sem comunicação desde 06/08. Acionar o Lucas.', priority: '🔴' },
       ],
     },
     Edgar: {
       EFFICIENCY: [
-        { client: 'Crianza Suprema', desc: 'Nono dia sem comunicação nos dois corrales. Seguimos precisando de ajuda para acioná-los.', priority: '🔴' },
-        { client: 'Twynam', desc: 'PEN 01 segue sem dados desde 29/07. Estamos com problema de processamento dos dados. Em contato com o Luigi.', priority: '🔴' },
-        { client: 'Abba', desc: 'Seguimos com o ajuste de pesagem.', priority: '🔴' },
-        { client: 'Calidad', desc: 'Quando for começar a próxima prova precisamos ir lá verificar os equipamentos, tem umas balanças estranhas.', priority: '🟡' },
-      ],
-      BEEF: [
-        { client: 'Agroporto', desc: 'Cliente segue sem responder ao Pedro. Pode ajudar a acionar?', priority: '🔴' },
-      ],
-      SCIENCE: [
-        { client: 'UFLA (Gado de Leite)', desc: 'Reprocessamento deu erro de novo. Vendo com o Luigi.', priority: '🔴' },
+          { client: 'Abba', desc: 'Seguimos com o ajuste de pesagem.', priority: '🔴' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Warren Farm', desc: 'Chegou o cadastro de animais. Cadastrar.', priority: '🟡' },
-        { client: 'Grama Senepol', desc: 'O cocho 455 voltou, mas parece que temos várias pendências de animais. Verificar se os alertas de monitoramento estão preenchidos corretamente.', priority: '🔴' },
-        { client: 'Nelore Mafra', desc: 'Prova encerrada e resultados entregues. Vamos descobrir quando entram com animais.', priority: '🟡' },
+        { client: 'Nelore Mafra', desc: 'Seguir no processo de descobrir quando entram com animais.', priority: '🟡' },
         { client: 'Santa Nazaré', desc: 'Segue no processo de descobrir quando vão entrar com os novos animais.', priority: '🟡' },
       ],
       BEEF: [
-        { client: 'Varginha', desc: 'Lote 5 caiu para 14 de 39 animais e Lote 6 para 27 de 41; Lote 8 segue lendo 66 contra 24 cadastrados. Seguir no processo, parece mesmo troca de lote.', priority: '🔴' },
-        { client: 'São Miguel', desc: 'Responder as dúvidas do Chico a respeito do relatório.', priority: '🟡' },
+        { client: 'Varginha', desc: 'Segue no processo de identificar pendências, parece que ainda temos pendências.', priority: '🔴' },
+        { client: 'São Miguel', desc: 'Lote com 14 de 20 animais. Responder dúvidas do Chico sobre o relatório e verificar esses animais sem dados.', priority: '🟡' },
       ],
       SCIENCE: [
         { client: 'CMA', desc: 'Segue no processo de conferir os dados e as pendências de animais.', priority: '🟡' },
-        { client: 'Cachoeira 2B', desc: 'Segue no processo das pendências de animais da semana passada.', priority: '🟡' },
-        { client: 'UFV DZO', desc: 'Dar uma olhada e ver como estão os dados. Ainda estamos com alguns alertas.', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'Verificar currais sem registros de animais: piquete 12 com 1 de 8 animais e piquete 11 com 5 de 8.', priority: '🔴' },
-        { client: 'Nelore Calil', desc: 'Enviar o relatório semanal.', priority: '🟡' },
+        { client: 'Cachoeira 2B', desc: 'Segue no processo das pendências de animais.', priority: '🟡' },
       ],
     },
     Camila: {
       EFFICIENCY: [
         { client: 'JBJ', desc: 'Prova finalizou. Aguardar análise da dieta para entrega dos resultados.', priority: '🟡' },
-        { client: 'Chapadão', desc: 'Enviar relatório semanal.', priority: '🟡' },
-        { client: 'Grama Senepol', desc: 'Enviar relatório semanal e acompanhar adaptação dos animais.', priority: '🔴' },
-        { client: 'Canaa', desc: 'Enviar relatório semanal.', priority: '🟡' },
-        { client: 'Katispera', desc: 'Caiu hoje: X3 com 79 de 99 animais (54 na plataforma) e X4 com 75 de 99 (59 na plataforma). Acompanhar os animais e enviar relatório semanal.', priority: '🔴' },
-        { client: 'Nelore Visual', desc: 'Seguir acompanhando o desempenho dos animais e enviar relatório semanal.', priority: '🟡' },
-        { client: 'Pontieri', desc: 'Enviar relatório semanal.', priority: '🟡' },
-        { client: 'HORA', desc: 'Enviar relatório semanal.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Enviar relatório semanal.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'Acompanhar os animais sem dados.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'Enviar relatório semanal.', priority: '🟡' },
-        { client: 'Nutritaurus', desc: 'Enviar relatório semanal se possível.', priority: '🟡' },
+	{ client: 'Twynam', desc: 'Prova finalizou. Aparentemente vai dar pra entregar todos os resultados (PEN 01 reprocessou).', priority: '🔴' },
+        { client: 'Nelore Visual', desc: 'Seguir acompanhando o desempenho dos animais, cochos vazios por muitas horas.', priority: '🟡' },
+        { client: 'HORA', desc: 'Acompanhar os animais.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'O cliente não respondeu na sexta; seguir acompanhando os animais sem dados.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'Projetopac', desc: 'Alguns animais sem registros, verificar; enviar relatório semanal se possível.', priority: '🔴' },
+        { client: 'Projetopac', desc: 'Normalizou: 30 de 30 animais com dado. Está tentando contato com o Álvaro, que não tem respondido — precisamos entender com ele sobre a entrega dos resultados, por se tratar de uma prova de Science.', priority: '🟡' },
       ],
     },
     Paulo: {
+      EFFICIENCY: [
+        { client: 'Abba', desc: 'Seguimos com o ajuste de pesagem.', priority: '🔴' },
+      ],
       SCIENCE: [
+        { client: 'UFLA (Gado de Leite)', desc: 'Reprocessamento segue com erro. O Luigi ainda está atuando — acompanhar com ele.', priority: '🔴' },
         { client: 'Pasto IZ', desc: 'Prova travada no Efficiency. Verificar.', priority: '🔴' },
-        { client: 'Projetopac', desc: 'Prova não abre no Efficiency. Acompanhar.', priority: '🔴' },
+        { client: 'Projetopac', desc: 'Prova não abre no Efficiency. Acompanhar.', priority: '🟡' },
       ],
     },
   };
