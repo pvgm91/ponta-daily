@@ -340,59 +340,59 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Baviera', desc: 'Os equipamentos com erro de operação foram verificados pelo cliente?', priority: '🟡' },
-        { client: 'ABCZ', desc: 'Curral 02 com T0 bebedouro 38,7% e plataforma 46,3%. Acompanhar.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'O cocho 2273 parou (Retiro 02 com 7 de 8 cochos) — é justamente um dos que calibraram. Verificar.', priority: '🔴' },
+        { client: 'Warren Farm', desc: 'PEN 03 e PEN 04 sem dados. Os PENs 01 e 02 saíram do painel. Verificar.', priority: '🔴' },
+        { client: 'Central Bela Vista / Qualitas', desc: 'A plataforma 3320 (plataforma e bebedouro) está parada desde 15/08. Acompanhar.', priority: '🔴' },
+        { client: 'Baviera', desc: 'Os equipamentos com erro de operação foram verificados pelo cliente? Os alertas estão ok.', priority: '🟡' },
+        { client: 'Katispera', desc: 'X3 e X4 voltaram a ficar sem comunicação desde 16/08, com 18 equipamentos parados em cada e nenhum animal com dado. É a terceira vez este mês. Precisamos de uma definição.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Piorou muito: Curral 02 com T0 bebedouro 50,5% e plataforma 53,1%, e o Curral 04 com 8,1% e 16,0%. Acompanhar.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'O cocho 2273 segue parado desde 12/08 (Retiro 02 com 7 de 8) e o T0 de cocho está em 5,4%. Verificar.', priority: '🔴' },
+        { client: 'Nutritaurus', desc: 'Cocho 2377 parado desde 15/08 (E2 com 2 de 3). Acompanhar.', priority: '🔴' },
+      ],
+      BEEF: [
+        { client: 'Frisia', desc: 'Voltou ao painel: B6 e B7 sem comunicação, sem plataformas ativas e nenhum animal com dado — e sem nenhum equipamento listado como parado, o que sugere retirada da prova e não falha. Confirmar.', priority: '🔴' },
+        { client: 'São Miguel', desc: 'Sem comunicação desde 16/08: os equipamentos 4636 e 4637 (plataforma e bebedouro) pararam e o lote está sem nenhum animal com dado. Verificar.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'UFLA (Gado de Leite)', desc: 'Entrou no painel (Palmital) — os dados voltaram a subir. Aparecem 9 de 20 cochos ativos, com 10 cochos parados entre 07/08 e 12/08, 27 de 37 animais e T0 bebedouro 14,8%. Verificar.', priority: '🔴' },
-        { client: 'UFLA (Gado de Corte)', desc: 'Seguir acompanhando a atualização do firmware para troca do ID do coletor.', priority: '🔴' },
-        { client: 'APTA Colina', desc: 'Piquetes 03, 04 e 05 seguem sem comunicação desde 10/08, 9 equipamentos parados. Quinto dia. Precisamos de retorno do cliente.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'Animal Housing G4 com T0 plataforma 30% e L6 com 28,1%. O 1202 do L4 voltou. Segue no processo.', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'T0 cocho vermelho em seis piquetes agora (M1-02, M2-05, M2-07 e M4-13, 14 e 15), entre 7,1% e 9,3%. Verificar.', priority: '🔴' },
-        { client: 'La Estanzuela', desc: 'Corral 01 com T0 plataforma 29,3% e Corral 03 com 29,1%. Verificar.', priority: '🔴' },
+        { client: 'Campanelli', desc: 'EX.A 1 com T0 cocho 5,6% além da plataforma 2009, que segue isolada desde 04/08. Verificar.', priority: '🔴' },
+        { client: 'UFLA (Gado de Corte)', desc: 'Seguir acompanhando a atualização do firmware para a troca do ID do coletor.', priority: '🔴' },
+        { client: 'APTA Colina', desc: 'Piquetes 03, 04 e 05 seguem sem comunicação desde 10/08. Acompanhar.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'O L4 segue sem bebedouro e plataforma (1202 parado desde 14/08).', priority: '🔴' },
+        { client: 'Pasto IZ', desc: 'T0 cocho vermelho no M1-Piquete 02 (8,9%) e no M3-Piquete 09 (5,3%). Verificar.', priority: '🔴' },
+        { client: 'EPAMIG (Getúlio Vargas)', desc: 'Curral 03 com T0 cocho 8,0%. Estava tudo certo ontem. Verificar.', priority: '🔴' },
+        { client: 'Embrapa Gado de Leite', desc: 'Fora do painel, alertas desabilitados. Como foi a visita de ontem?', priority: '🟢' },
+        { client: 'La Estanzuela', desc: 'Corral 01 com T0 plataforma 28,6% e Corral 03 com 29,3%, além de T0 cocho 8,4% no Corral 03. Verificar.', priority: '🔴' },
+        { client: 'DSM', desc: 'Sem comunicação desde 16/08. Verificar.', priority: '🔴' },
       ],
     },
     Edgar: {
       EFFICIENCY: [
         { client: 'Abba', desc: 'Segue aguardando disponibilidade do Luigi. Seguimos com o ajuste de pesagem.', priority: '🟡' },
-        { client: 'Santa Nazaré', desc: 'Quarto dia sem retorno. Pode nos ajudar a entrar em contato com a Lyara e mapear sobre a nova prova?', priority: '🟡' },
-        { client: 'Agronova', desc: 'Currais 01 e 02 seguem sem comunicação pela fonte queimada. Enviamos a fonte que iremos emprestar para eles?', priority: '🔴' },
+        { client: 'Agronova', desc: 'Currais 01 e 02 seguem sem comunicação pela fonte queimada e o cocho 1590 do Curral 03 segue parado desde 06/08. A fonte emprestada já foi enviada?', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'UFLA (Gado de Corte)', desc: 'Seguir acompanhando a atualização do firmware para troca do ID do coletor.', priority: '🔴' },
-        { client: 'UFRGS', desc: 'Reprocessamento solicitado novamente. Conferir se os dias 06 e 09 entraram.', priority: '🟡' },
+        { client: 'UFLA (Gado de Leite)', desc: 'Precisamos descobrir se estão usando todos os equipamentos e ajustar nos alertas. Pode nos ajudar?', priority: '🔴' },
+        { client: 'UFLA (Gado de Corte)', desc: 'Seguir acompanhando a atualização do firmware para a troca do ID do coletor.', priority: '🔴' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Katispera', desc: 'O cliente segue sem responder sobre a lista de animais do leilão.', priority: '🟡' },
+        { client: 'Warren Farm', desc: 'O pessoal já foi avisado sobre os PENs sem dados?', priority: '🔴' },
+        { client: 'Chapadão', desc: 'Verificar animal sem dado na balança.', priority: '🟡' },
       ],
       BEEF: [
-        { client: 'São Miguel', desc: 'Relatório semanal enviado ontem para eles.', priority: '🔴' },
+        { client: 'Varginha', desc: 'Seis dos oito lotes com T0 de plataforma no vermelho, chegando a 78,6% no Lote 5, que está com 28 de 50 animais. Verificar.', priority: '🔴' },
+      ],
+      SCIENCE: [
+        { client: 'CMA', desc: 'Vamos acompanhar os alertas de animais.', priority: '🟡' },
       ],
     },
     Camila: {
       EFFICIENCY: [
-        { client: 'Grama Senepol', desc: 'Melhorou bastante: os cochos voltaram e os animais normalizaram no Lote de Cima. Acompanhar e enviar relatório semanal.', priority: '🟡' },
-        { client: 'Katispera', desc: 'Enviar relatório semanal.', priority: '🟡' },
-        { client: 'HORA', desc: 'Enviar relatório semanal.', priority: '🟡' },
-        { client: 'ABCZ', desc: 'Enviar relatório semanal.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'Acompanhar e enviar relatório semanal.', priority: '🟡' },
-        { client: 'Nutritaurus', desc: 'Enviar relatório semanal.', priority: '🟡' },
-      ],
-      SCIENCE: [
-        { client: 'Projetopac', desc: 'Voltou a rodar no Efficiency. Seguem 27 de 30 animais no bebedouro e 26 na plataforma. Acompanhar e enviar relatório semanal.', priority: '🟡' },
+        { client: 'Chapadão', desc: 'Verificar animal sem dado na balança.', priority: '🟡' },
+        { client: 'São Marcelo', desc: 'Acompanhar animal sem dados.', priority: '🟡' },
       ],
     },
-    Paulo: {
-      EFFICIENCY: [
-        { client: 'São Miguel (Eff)', desc: 'O cliente voltou a usar. Acompanhar a adaptação.', priority: '🟡' },
-      ],
-      SCIENCE: [
-        { client: 'EPAMIG (Risoleta Neves)', desc: 'T0 cocho 6,2%. Verificar.', priority: '🔴' },
-      ],
-    },
+    Paulo: {},
   };
 
   const STATUS_OPTIONS = [
