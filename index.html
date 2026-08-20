@@ -340,67 +340,61 @@
   const TASKS = {
     Pedro: {
       EFFICIENCY: [
-        { client: 'Central Bela Vista / Qualitas', desc: 'A plataforma 3320 (plataforma e bebedouro) segue parada desde 15/08. Acompanhar.', priority: '🔴' },
-        { client: 'Baviera', desc: 'Os equipamentos com erro de operação foram verificados pelo cliente?', priority: '🟡' },
-        { client: 'Katispera', desc: 'X3 e X4 seguem sem comunicação desde 16/08. Quarto dia. Precisamos verificar.', priority: '🔴' },
-        { client: 'HORA', desc: 'CR03 com T0 cocho 7,1% e CR02 com 69 de 70 animais pesando. Verificar.', priority: '🔴' },
-        { client: 'ABCZ', desc: 'Melhorou bastante: Curral 02 caiu de 50,5% para 14,5% no bebedouro e de 53,1% para 25,7% na plataforma. Acompanhar.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'O cocho 2269 está com consumo acima dos demais e oscilando — verificar se conseguem calibrar. O 2273 voltou.', priority: '🔴' },
-        { client: 'Nutritaurus', desc: 'Cocho 2377 segue parado desde 15/08 (E2 com 2 de 3). Acompanhar.', priority: '🔴' },
-        { client: 'Agronova', desc: 'Os currais 01 e 02 voltaram a comunicar, mas com problema: Curral 02 com T0 cocho 28,8% e 5 de 7 cochos, Curral 01 com 6 de 7 e só 4 animais pesando; Curral 03 com T0 cocho 5,7%. Verificar.', priority: '🔴' },
+        { client: 'Canaa', desc: 'Prova nova entrou com problema: A0002 sem plataformas (1539 e 1540 parados desde 18/08) e nenhum animal pesando; A0003 com T0 cocho 22,6%; A0007 com 3 de 4 cochos (1532 parado desde 14/08). Verificar.', priority: '🔴' },
+        { client: 'Central Bela Vista / Qualitas', desc: 'A plataforma 3320 segue parada desde 15/08. Segue no processo.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Curral 02 com TAG 0 no bebedouro de 11,8%, mas o Curral 04 piorou: T0 bebedouro 19,7% e plataforma 37,5%. Vamos pensar sobre e ver se existe algo que a gente possa fazer.', priority: '🔴' },
+        { client: 'Nutritaurus', desc: 'Cocho 2377 segue parado desde 15/08 (E2 com 2 de 3). Segue no processo.', priority: '🔴' },
+        { client: 'Agronova', desc: 'Curral 03 com T0 cocho 36,2% e o cocho 1587 parado desde 18/08; os quatro currais com animais sem passar na plataforma. Acompanhar visita técnica.', priority: '🔴' },
+      ],
+      BEEF: [
+        { client: 'Frisia', desc: 'B7 ficou sem comunicação: os equipamentos 4705 e 4706 pararam em 18/08. Verificar.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'APTA Colina', desc: 'Piquetes 03, 04 e 05 seguem sem comunicação desde 10/08. Vamos acompanhar.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'L4 segue sem bebedouro e plataforma (1202 parado desde 14/08) e o L5 está com T0 plataforma 31,3%.', priority: '🔴' },
-        { client: 'Embrapa Gado de Leite', desc: 'Fora do painel, alertas desabilitados. Como foi a visita?', priority: '🟢' },
+        { client: 'APTA Colina', desc: 'Piquetes 03, 04 e 05 seguem sem comunicação desde 10/08. Foi dado como concluído ontem, mas os alertas continuam — verificar.', priority: '🔴' },
+        { client: 'UFV DZO', desc: 'Animal Housing G6 com T0 plataforma 22,2% e L9 com 21,1%. Segue no processo.', priority: '🔴' },
+        { client: 'DSM', desc: '47 de 57 animais comendo. Estamos com problemas de portas.', priority: '🔴' },
       ],
     },
     Edgar: {
-      EFFICIENCY: [
-        { client: 'Abba', desc: 'Segue aguardando disponibilidade do Luigi. Seguimos com o ajuste de pesagem.', priority: '🟡' },
-        { client: 'Agronova', desc: 'Eles estão na garantia?', priority: '🔴' },
-      ],
       SCIENCE: [
-        { client: 'UFLA (Gado de Leite)', desc: 'T0 bebedouro subiu para 24,4% e só 6 animais estão comendo. Sabe nos dizer se eles estão usando poucos equipamentos?', priority: '🔴' },
-        { client: 'UFLA (Gado de Corte)', desc: 'O reprocessamento foi feito ontem, veja se deu certo.', priority: '🔴' },
-        { client: 'Pasto IZ', desc: 'O Luigi conseguiu resolver a pendência do Beef pra gente iniciar as lapidações?', priority: '🔴' },
+        { client: 'UFLA (Gado de Leite)', desc: 'Mais dois cochos pararam em 18/08; seguem 9 de 20. A Maria Clara já retornou sobre quais equipamentos estão em uso?', priority: '🔴' },
+        { client: 'UFLA (Gado de Corte)', desc: 'O reprocessamento não deu certo. Há algo que a gente possa fazer sobre isso?', priority: '🔴' },
+        { client: 'Pasto IZ', desc: 'O cliente pediu para analisarmos no Efficiency — seguimos com a pendência do Luigi para iniciar as lapidações.', priority: '🔴' },
+        { client: 'DSM', desc: 'Estamos com problemas de portas.', priority: '🔴' },
       ],
       SUÍNOS: [
-        { client: 'BRF', desc: 'Máquina 1 e Máquina 4 estão com TAG 0. Pode dar uma olhada?', priority: '🔴' },
+        { client: 'BRF', desc: 'Animais sem tag identificados, vão trocar hoje.', priority: '🟡' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Warren Farm', desc: 'PEN 03 e PEN 04 seguem sem comunicação desde 15/08. Verificar.', priority: '🔴' },
-        { client: 'Santa Fé', desc: '55 de 56 animais nos cochos e apenas 46 pesando; o cadastro está com 12 cochos e 4 plataformas contra 6 e 2 cadastrados. Verificar a adaptação dos animais e ajustar o cadastro.', priority: '🟡' },
-        { client: 'São Miguel (Eff)', desc: 'Acompanhar a adaptação e verificar se não há pendência de cadastro — são animais que estavam na linha Beef.', priority: '🟡' },
+        { client: 'Warren Farm', desc: 'Aparentemente estavam sem comunicação e voltou. Vamos acompanhar.', priority: '🟡' },
+        { client: 'Santa Fé', desc: 'T0 cocho 21,0% e o cocho 4845 parado desde 18/08. Precisa reprocessar algo? No Curral 2 não tem alertas de monitoramento habilitados.', priority: '🔴' },
       ],
       BEEF: [
-        { client: 'Varginha', desc: 'Seis dos oito lotes com T0 de plataforma no vermelho; Lote 5 com 76,2% e 24 de 50 animais, Lote 6 subiu para 43,2%. Alinhar todas as pendências junto do cliente.', priority: '🔴' },
-        { client: 'Frisia', desc: 'Voltou a comunicar: B6 com 53 de 67 animais e T0 plataforma 21,1%; B7 com apenas 2 de 66. Acompanhar (pedir ajuda ao Pedro se desconfiar ser problema de equipamento). Verificar e enviar os relatórios semanais.', priority: '🟡' },
-        { client: 'São Miguel', desc: 'Voltou a comunicar, mas com 6 de 20 animais pesando. Verificar na conversa com a Maryelle se ficou alguma pendência de cadastro e baixa. Ela ficou de enviar uma planilha hoje com os novos animais.', priority: '🔴' },
+        { client: 'Varginha', desc: 'Segue cobrando o Matheus dos animais sem dados e das pesagens parciais.', priority: '🔴' },
+        { client: 'Frisia', desc: 'Vamos acompanhar esse cliente e conforme for enviar o relatório semanal.', priority: '🔴' },
+        { client: 'São Miguel', desc: 'Melhorou de 6 para 11 de 20 animais pesando. A Maryelle ficou de enviar a planilha com os novos animais que entraram. Vale cobrar.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'CMA', desc: 'CIP2 e CIP8 ficaram sem comunicação desde 17/08, com os equipamentos 1490, 1491, 1482 e 1483 parados e nenhum animal com dado. Verificar.', priority: '🔴' },
-        { client: 'EPAMIG (Getúlio Vargas)', desc: 'Curral 03 com T0 cocho 6,7%. Verificar.', priority: '🔴' },
-        { client: 'La Magnolia', desc: 'O experimento acabou lá? Sumiu dos alertas.', priority: '🟡' },
-        { client: 'DSM', desc: 'Voltou a comunicar, mas com 48 de 57 animais comendo. Verificar.', priority: '🟡' },
+        { client: 'CMA', desc: 'CIP2 e CIP8 seguem sem comunicação desde 17/08, com os equipamentos 1490, 1491, 1482 e 1483 parados. Verificar.', priority: '🔴' },
+        { client: 'DSM', desc: '47 de 57 animais comendo. Segue no processo.', priority: '🔴' },
       ],
     },
     Camila: {
       EFFICIENCY: [
-        { client: 'Chapadão', desc: 'A prova finaliza esta semana. Acompanhar.', priority: '🟡' },
-        { client: 'São Miguel (Eff)', desc: 'Acompanhar a adaptação e verificar se não há pendência de cadastro — são animais que estavam na linha Beef.', priority: '🟡' },
-        { client: 'HORA', desc: 'Acompanhar animal sem dado.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'Verificar pendências de animais.', priority: '🔴' },
-        { client: 'São Marcelo', desc: 'Acompanhar o animal sem dados.', priority: '🟡' },
-        { client: 'Nutritaurus', desc: 'E4 com 23 de 24 animais comendo.', priority: '🔴' },
-      ],
-      SCIENCE: [
-        { client: 'Projetopac', desc: 'Aparentemente temos 2 animais sem pesagens. Acompanhar.', priority: '🟡' },
+        { client: 'Chapadão', desc: 'A prova finaliza esta semana? Vamos verificar. A análise de dieta já foi cobrada, mas vamos acompanhar.', priority: '🟡' },
+        { client: 'Abba', desc: 'O Luigi corrigiu e mandou reprocessar. Vamos conferir se deu tudo certo.', priority: '🟡' },
+        { client: 'Pontieri', desc: 'Acompanhar, parece que temos 1 animal sem registro nas plataformas.', priority: '🟡' },
+        { client: 'HORA', desc: 'Acompanhar, temos animais sem registro.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'Verificar as pendências de animais (o cocho 2280 está com o sensor travado).', priority: '🔴' },
       ],
     },
-    Paulo: {},
+    Paulo: {
+      EFFICIENCY: [
+        { client: 'Abba', desc: 'O Luigi corrigiu e mandou reprocessar. Vamos conferir se deu tudo certo.', priority: '🟡' },
+      ],
+    },
   };
 
   const STATUS_OPTIONS = [
