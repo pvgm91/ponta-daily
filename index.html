@@ -338,67 +338,76 @@
 <script>
   // ─── DATA ───────────────────────────────────────────────────────────────────
   const TASKS = {
-    Pedro: {
+    Camila: {
       EFFICIENCY: [
-        { client: 'Santa Fé', desc: 'Os dois currais ficaram totalmente sem comunicação. As placas estão a caminho?', priority: '🔴' },
-        { client: 'Canaa', desc: 'A0007 segue com o cocho 3449 parado desde 31/08 e A0011 com T0 cocho 8,0%. Teremos visita técnica hoje?', priority: '🔴' },
-        { client: 'Nelore Confiança', desc: 'C-01 segue sem comunicação desde 19/08. Acompanhar a visita técnica de hoje.', priority: '🔴' },
-        { client: 'Katispera', desc: 'X3 e X4 seguem sem comunicação desde 20/08, verificar.', priority: '🔴' },
-        { client: 'Eldorado', desc: 'Bruno e Natanael avisados, proposta de peças enviada e prometeram deixar o cocho 2280 vazio. Acompanhar para ver se o cocho realmente ficou fechado.', priority: '🟡' },
-        { client: 'Agronova', desc: 'Nono dia consecutivo. O coletor está na rede, mas os equipamentos seguem todos fora — providenciando visita técnica.', priority: '🔴' },
+        { client: 'Agropecuária HB', desc: 'Segue no processo, acompanhando a adaptação pelo SI — vários animais sem dados.', priority: '🟡' },
+        { client: 'Chapadão', desc: 'Verificar a possibilidade de enviar o relatório semanal.', priority: '🔴' },
+        { client: 'Baviera', desc: 'Seguir acompanhando os animais sem dados nos currais 11, 12 e 14. Enviar relatório semanal.', priority: '🔴' },
+        { client: 'Katispera', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'Nelore Visual', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'São Miguel (Eff)', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'HORA', desc: 'Prova encerrada. Trabalhar no resultado.', priority: '🟡' },
+        { client: 'ABCZ', desc: 'Enviar relatório semanal.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'São Marcelo', desc: 'Enviar relatório semanal.', priority: '🟡' },
+        { client: 'Nutritaurus', desc: 'Enviar relatório semanal.', priority: '🟡' },
       ],
       SCIENCE: [
-        { client: 'IntegralMix', desc: 'Sem comunicação, verificar.', priority: '🔴' },
-        { client: 'UFV DZO', desc: 'L4 segue com T0 plataforma 100%. Segue no processo — há um cocho que não calibra por conta de um fio rompido.', priority: '🔴' },
-        { client: 'Embrapa Cerrados', desc: 'Sem comunicação, verificar.', priority: '🔴' },
-        { client: 'IZ Bovinos', desc: 'O equipamento 788 (bebedouro e plataforma) parou em 01/09 nos Lotes A e B, verificar.', priority: '🔴' },
+        { client: 'PROJETOPAC', desc: 'Enviar relatório semanal.', priority: '🟡' },
       ],
     },
     Giovana: {
       EFFICIENCY: [
-        { client: 'Chapadão', desc: '01-CAMM ficou sem comunicação de novo, verificar.', priority: '🔴' },
-        { client: 'Casa Branca', desc: 'Acompanhar as pendências de cadastro — vários animais pendentes.', priority: '🟡' },
-        { client: 'HORA', desc: 'Os quatro currais seguem sem comunicação desde 29/08, 72 equipamentos parados. Sexto dia. O cliente segue sem responder, cobrar novamente.', priority: '🔴' },
-        { client: 'Santa Nazaré', desc: 'Entrar em contato com a Lyara para acompanhar os testes de início de prova.', priority: '🟡' },
+        { client: 'Casa Branca', desc: 'Ainda sem resposta — seguir acompanhando as pendências de cadastro.', priority: '🟡' },
+        { client: 'Santa Nazaré', desc: 'Contato com a Lyara concluído — seguir acompanhando os testes de início de prova.', priority: '🟡' },
       ],
       BEEF: [
-        { client: 'Varginha', desc: 'Piorou muito: o Lote 1 caiu para 12 de 39 animais com T0 plataforma 54,1%; os sete lotes seguem no vermelho. Ainda no processo.', priority: '🔴' },
-        { client: 'Agroporto', desc: 'Sem comunicação, verificar.', priority: '🔴' },
-        { client: 'Frisia', desc: 'Seguem sem comunicação desde 28/08. Ainda sem resposta do cliente.', priority: '🔴' },
-        { client: 'Santa Tereza', desc: 'Curral 01 com T0 plataforma 21,7% e 24 de 28 animais. Ainda sem resposta. Treinamento agendado para hoje.', priority: '🔴' },
+        { client: 'Varginha', desc: 'Os sete lotes seguem no vermelho, com o Lote 1 em 44,3% e o Lote 6 em 29,9%. Ainda no processo.', priority: '🔴' },
+        { client: 'Agroporto', desc: 'F10, F11 e F12 seguem totalmente sem comunicação desde 01/09. Ainda sem resposta do cliente.', priority: '🔴' },
+        { client: 'Frisia', desc: 'B6 e B7 seguem sem comunicação desde 28/08. Ainda sem resposta do cliente. Acompanhar os testes do Angus sem tábua.', priority: '🔴' },
+        { client: 'São Miguel', desc: 'Caiu muito: 8 de 20 animais pesando. Verificar.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'CMA', desc: 'Sem comunicação, verificar.', priority: '🔴' },
-        { client: 'UNESP Bubalinos', desc: 'Aparentemente finalizaram o experimento, verificar.', priority: '🟡' },
-        { client: 'Cachoeira 2B', desc: 'Lactação 01 com 6 de 10 animais na plataforma, verificar.', priority: '🟡' },
-        { client: 'Pasto IZ', desc: 'Piorou: M2-Piquete 07 com T0 cocho 22,4%, além do M1-Piquete 02 (6,6%) e M2-Piquete 05 (5,9%). Seguimos com a lapidação da prova.', priority: '🔴' },
+        { client: 'CMA', desc: 'Ainda sem resposta do cliente sobre a comunicação.', priority: '🔴' },
+        { client: 'Cachoeira 2B', desc: 'Ainda no processo — Lactação 01 com 7 de 10 animais na plataforma.', priority: '🟡' },
+        { client: 'Pasto IZ', desc: 'M3-Piquete 12 com animais sem passar no bebedouro e na plataforma, além do M1-Piquete 02 (7,1%) e M2-Piquete 07 (10,6% e 13,2%). Seguimos com a lapidação da prova.', priority: '🔴' },
+        { client: 'Embrapa Cerrados', desc: 'Marcar um treinamento com eles para a semana que vem.', priority: '🟡' },
+      ],
+    },
+    Pedro: {
+      EFFICIENCY: [
+        { client: 'Chapadão', desc: '01-CAMM segue sem comunicação e o 02-CAPM piorou: T0 plataforma 40,7%. Verificar.', priority: '🔴' },
+        { client: 'Santa Fé', desc: 'Os dois Intergados seguem totalmente sem comunicação desde 01/09. As placas chegaram?', priority: '🔴' },
+        { client: 'Canaa', desc: 'A0011 com T0 cocho 5,4%, verificar.', priority: '🔴' },
+        { client: 'Nelore Confiança', desc: 'C-01 voltou parcialmente: cocho ok, mas a plataforma segue com 0 de 2 ativas. Acompanhar.', priority: '🟡' },
+        { client: 'Baviera', desc: 'Cocho 2323 parou em 02/09 (Curral 12 com 5 de 6), verificar.', priority: '🔴' },
+        { client: 'Eldorado', desc: 'O cocho 2280 realmente ficou fechado?', priority: '🟡' },
+      ],
+      SCIENCE: [
+        { client: 'UFV DZO', desc: 'Animal Housing G1, G4 e G6 perderam bebedouro e plataforma em 02/09; L4 com T0 plataforma 75% e L9 com 47,1%. Verificar de novo.', priority: '🔴' },
+        { client: 'IZ Bovinos', desc: 'O 1274 (cocho) parou em 02/09 nos Lotes C e D; Lotes A e B com T0 bebedouro 5,9%. Verificar.', priority: '🔴' },
+      ],
+    },
+    Paulo: {
+      EFFICIENCY: [
+        { client: 'Agropecuária HB', desc: 'Verificar prova com problema no Efficiency.', priority: '🟡' },
+        { client: 'Irmãos Tonetto', desc: 'Resolvido: coletor novo com wi-fi instalado e o cocho 1400 voltou a funcionar. Verificar prova com problema no Efficiency.', priority: '🟡' },
+      ],
+      SCIENCE: [
+        { client: 'Pasto IZ', desc: 'M3-Piquete 12 com animais sem passar no bebedouro e na plataforma, além do M1-Piquete 02 (7,1%) e M2-Piquete 07 (10,6% e 13,2%). Seguimos com a lapidação da prova.', priority: '🔴' },
+      ],
+      SUÍNOS: [
+        { client: 'BRF', desc: 'Validar os relatórios para enviarmos.', priority: '🟡' },
       ],
     },
     Edgar: {
       EFFICIENCY: [
-        { client: 'ABCZ', desc: 'Segue crítico: Curral 02 com T0 bebedouro 61,4% e plataforma 64,5%. Cobrar o Botelho.', priority: '🔴' },
-        { client: 'Agronova', desc: 'Nono dia consecutivo com os equipamentos fora. Precisamos definir o que fazer com esse cliente.', priority: '🔴' },
+        { client: 'ABCZ', desc: 'Segue crítico: Curral 02 com T0 bebedouro 51,0% e plataforma 59,8%. Cobrar o Botelho novamente.', priority: '🔴' },
       ],
       SCIENCE: [
-        { client: 'UNESP Jaboticabal', desc: 'Concluído: negociação do coletor novo fechada, produção em andamento e devem enviar nos próximos dias.', priority: '🟡' },
-        { client: 'UFLA (Gado de Leite)', desc: 'Segue no processo — houve um erro no orçamento que enviamos, o processo está sendo retomado.', priority: '🔴' },
-        { client: 'Embrapa Gado de Leite', desc: 'Free Stall 02 e 03 seguem sem comunicação e ainda não houve atuação. Ajudar a entender a situação com a Mariana.', priority: '🔴' },
-      ],
-    },
-    Camila: {
-      EFFICIENCY: [
-        { client: 'Agropecuária HB', desc: 'Seguir acompanhando a adaptação pelo SI — vários animais sem dados.', priority: '🟡' },
-        { client: 'Baviera', desc: 'Seguir acompanhando os animais sem dados nos currais 11, 12 e 14.', priority: '🟡' },
-        { client: 'Nutritaurus', desc: 'E4 e E6 com animais sem passar na plataforma. Ainda no processo.', priority: '🟡' },
-      ],
-    },
-    Paulo: {
-      SCIENCE: [
-        { client: 'UFLA (Gado de Corte)', desc: 'Parte dos dados subiu e o reprocessamento foi solicitado novamente, verificar.', priority: '🟡' },
-        { client: 'Pasto IZ', desc: 'Piorou: M2-Piquete 07 com T0 cocho 22,4%, além do M1-Piquete 02 (6,6%) e M2-Piquete 05 (5,9%). Seguimos com a lapidação da prova.', priority: '🔴' },
-      ],
-      SUÍNOS: [
-        { client: 'BRF', desc: 'Validar os relatórios para enviarmos.', priority: '🟡' },
+        { client: 'UNESP Jaboticabal', desc: 'Segue no processo — coletor novo em produção, deve ser enviado nos próximos dias.', priority: '🟡' },
+        { client: 'UFLA (Gado de Leite)', desc: 'Segue no processo — houve um erro no orçamento e ficamos de ajustar e reenviar. O cliente também tem problemas de equipamentos.', priority: '🔴' },
+        { client: 'Embrapa Gado de Leite', desc: 'Free Stall 02 e 03 seguem sem comunicação. Conseguiu falar com a Mariana ou o Romário?', priority: '🔴' },
       ],
     },
   };
